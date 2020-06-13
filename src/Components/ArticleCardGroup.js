@@ -7,16 +7,22 @@ const GroupBox = styled.table`
   margin: 2rem;
   width: 100%;
   height: 100%;
-  max-width: 1140px;
   margin: auto;
 `;
 
 const GroupRowBox = styled.tr`
-
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 `;
 
 const GroupItemBox = styled.th`
-
+  margin: 0;
+  padding: 0;
+  display: inline;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
 `;
 
 const GenerateTable = (data, th_per_tr) => {

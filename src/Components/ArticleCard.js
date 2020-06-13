@@ -10,7 +10,8 @@ const CardBox = styled.div`
   width: 30rem;
   height: 100%;
   overflow: hidden;
-  margin: 0 auto;
+  display: inline-block;
+  margin: 1rem 0 0 0;
 	border-image-source: linear-gradient(
 		to left,
 		#e80872,
