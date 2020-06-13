@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import ArticleCard from './ArticleCard';
+import ArticleCardGroup from './ArticleCardGroup';
 
 const BodyBlog = (props) => {
   const [articles, setArticles] = useState([]);
@@ -10,9 +10,7 @@ const BodyBlog = (props) => {
       .then(res => {setArticles(res.data)});
   }, []);
   return (
-    articles.map((article, index) => (
-      <ArticleCard article={article} key={index} />
-    ))
+    <ArticleCardGroup articles={articles}/>
   );
 }
 
