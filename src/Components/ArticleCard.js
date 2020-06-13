@@ -19,10 +19,6 @@ const CardBox = styled.div`
   );
   padding: 1rem;
   box-sizing: border-box;
-  transition: all 0.2s ease;
-  &:hover {
-    transform: translate(0px,-5px);
-  }
 `;
 
 const CardImageBox = styled.div`
