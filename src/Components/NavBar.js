@@ -64,12 +64,27 @@ const MenuList = styled.ul`
 `;
 
 const MenuItem = styled.li`
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
   color: #f0f0f0;
   margin-right: ${props => !props.last ? 2 : 0}rem;
   display: inline-block;
+  @media only screen and (max-width: 56.25em) {
+    display: block;
+		margin: 2rem 0;
+		padding-left: 2rem;
+  }
+  box-sizing: border-box;
+`;
+
+const LinkItem = styled.a`
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: #f0f0f0;
+  }
   font-size: 2rem;
   transition: all 0.4s ease;
   &:hover {
@@ -85,18 +100,9 @@ const MenuItem = styled.li`
 		color: transparent;
 		transform: rotate(5deg) scale(1.3);
   }
-  @media only screen and (max-width: 56.25em) {
-    display: block;
-		margin: 2rem 0;
-		padding-left: 2rem;
-  }
 `;
 
-const ButtonInput = styled.input`
-  display: none;
-`;
-
-const ButtonLable = styled.label`
+const ButtonLabel = styled.label`
   height: 7rem;
   width: 7rem;
   position: fixed;
@@ -155,14 +161,13 @@ const NavBar = (props) => {
         </LogoBox>
         <NavBox>
           <MenuList show={show}>
-            <MenuItem>Hackathon 2020</MenuItem>
-            <MenuItem>Tech Marathon</MenuItem>
-            <MenuItem>Sự kiện khác</MenuItem>
-            <MenuItem last>Blog</MenuItem>
+            <MenuItem><LinkItem href="/">Hackathon 2020</LinkItem></MenuItem>
+            <MenuItem><LinkItem href="/">Tech Marathon</LinkItem></MenuItem>
+            <MenuItem><LinkItem href="/">Sự kiện khác</LinkItem></MenuItem>
+            <MenuItem last><LinkItem href="/">Blog</LinkItem></MenuItem>
           </MenuList>
         </NavBox>
-        <ButtonInput id="navi-toggle"/>
-        <ButtonLable for="navi-toggle" onClick={() => setShow(!show)}><ButtonIcon/></ButtonLable>
+        <ButtonLabel onClick={() => setShow(!show)}><ButtonIcon/></ButtonLabel>
       </NavBarBox>
     </NavBarHeader>
   );
