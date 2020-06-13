@@ -23,10 +23,8 @@ const NavBarBox = styled.div`
 
 const LogoBox = styled.div`
   float: left;
+  margin-left: 1rem;
   width: calc((100% - 2 * 6rem) / 3);
-  @media only screen and (max-width: 56.25em) {
-    margin-left: 1rem;
-  }
 `;
 
 const Logo =styled.img`

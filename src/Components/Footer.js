@@ -6,7 +6,6 @@ const FooterBox = styled.footer`
   background-color: #161616;
   padding: 3rem;
   bottom: 0;
-  position: fixed;
   width: 100%;
   box-sizing: border-box;
 `;
