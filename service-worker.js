@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/shecode-website-react/precache-manifest.7f08a2912c033104b8b3a53d799b5654.js"
+  "/shecode-website-react/precache-manifest.c3387eadd7d827f1adc2a8baf8609f1a.js"
 );
 
 self.addEventListener('message', (event) => {
