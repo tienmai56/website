@@ -6,7 +6,7 @@ import ArticleCardGroup from './ArticleCardGroup';
 const BodyBlog = (props) => {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
-    axios.get('/database-blog')
+    axios.get('https://shecodes-blog.herokuapp.com/database-blog')
       .then(res => {setArticles(res.data)});
   }, []);
   return (
