@@ -8,7 +8,7 @@ const NavBarHeader = styled.div`
   margin: 0 auto;
   height: 6rem;
   border-bottom: 1px solid #3f3f3f;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 10000;

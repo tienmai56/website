@@ -159,6 +159,20 @@ const MediaList = styled.ul`
 
 const MediaItem = styled.i`
   font-size: 2rem;
+  transition: transform 0.4s ease !important;
+  &:hover {
+    cursor: pointer;
+    outline: none;
+		background-image: linear-gradient(
+			to right,
+			#e80872,
+			#592368
+		);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		transform: rotate(5deg) scale(1.3);
+  }
 `;
 
 const CopyRight = styled.p`
