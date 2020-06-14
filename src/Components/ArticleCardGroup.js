@@ -4,24 +4,29 @@ import styled from 'styled-components';
 import ArticleCard from './ArticleCard';
 
 const GroupBox = styled.table`
-  margin: 2rem;
   width: 100%;
   height: 100%;
   margin: auto;
+  display: flex;
+  justify-content: center;
 `;
 
 const GroupRowBox = styled.tr`
   overflow: hidden;
   position: relative;
   width: 100%;
+  display: flex;
 `;
 
 const GroupItemBox = styled.th`
   margin: 0;
-  padding: 0;
-  display: inline;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  width: 30rem;
+  transition all .2s ease;
+  &:hover {
+    transform: translate(0px, -0.4rem);
+  }
 }
 `;
 
