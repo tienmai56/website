@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/shecode-website-react/static/css/main.89a4adef.chunk.css",
-    "main.js": "/shecode-website-react/static/js/main.f967f081.chunk.js",
-    "main.js.map": "/shecode-website-react/static/js/main.f967f081.chunk.js.map",
+    "main.js": "/shecode-website-react/static/js/main.ebfe2e9d.chunk.js",
+    "main.js.map": "/shecode-website-react/static/js/main.ebfe2e9d.chunk.js.map",
     "runtime-main.js": "/shecode-website-react/static/js/runtime-main.8e5b0923.js",
     "runtime-main.js.map": "/shecode-website-react/static/js/runtime-main.8e5b0923.js.map",
     "static/js/2.a97462e3.chunk.js": "/shecode-website-react/static/js/2.a97462e3.chunk.js",
     "static/js/2.a97462e3.chunk.js.map": "/shecode-website-react/static/js/2.a97462e3.chunk.js.map",
     "index.html": "/shecode-website-react/index.html",
-    "precache-manifest.c3387eadd7d827f1adc2a8baf8609f1a.js": "/shecode-website-react/precache-manifest.c3387eadd7d827f1adc2a8baf8609f1a.js",
+    "precache-manifest.5a8f15f0a9dc8e60d8cec2700bc5fd5e.js": "/shecode-website-react/precache-manifest.5a8f15f0a9dc8e60d8cec2700bc5fd5e.js",
     "service-worker.js": "/shecode-website-react/service-worker.js",
     "static/css/main.89a4adef.chunk.css.map": "/shecode-website-react/static/css/main.89a4adef.chunk.css.map",
     "static/js/2.a97462e3.chunk.js.LICENSE.txt": "/shecode-website-react/static/js/2.a97462e3.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8e5b0923.js",
     "static/js/2.a97462e3.chunk.js",
     "static/css/main.89a4adef.chunk.css",
-    "static/js/main.f967f081.chunk.js"
+    "static/js/main.ebfe2e9d.chunk.js"
   ]
 }
