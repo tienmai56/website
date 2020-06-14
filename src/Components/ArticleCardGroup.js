@@ -31,7 +31,7 @@ const GroupItemBox = styled.th`
 `;
 
 const GenerateTable = (data, th_per_tr) => {
-  th_per_tr = Math.floor( window.outerWidth/300);
+  th_per_tr = Math.floor( Math.min(window.outerWidth, 1140)/300 );
   let trs = [];
   for(let i = 0; i < data.length; i += th_per_tr) {
     let ths = [];
