@@ -7,6 +7,7 @@ const GroupBox = styled.table`
   width: 100%;
   height: 100%;
   margin: auto;
+  margin-top: 6rem;
   display: flex;
   justify-content: center;
 `;

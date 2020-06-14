@@ -6,9 +6,11 @@ import ArticleCardGroup from './ArticleCardGroup';
 const Blog = (props) => {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
-    axios.get('https://shecodes-blog.herokuapp.com/database-blog')
-      .then(res => {setArticles(res.data)});
-  }, []);
+    if(articles.length === 0) {
+      axios.get('https://shecodes-blog.herokuapp.com/database-blog')
+        .then(res => {setArticles(res.data)});
+    }
+  }, [articles]);
   return (
     <ArticleCardGroup articles={articles}/>
   );

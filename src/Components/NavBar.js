@@ -9,7 +9,7 @@ const NavBarHeader = styled.div`
   margin: 0 auto;
   height: 6rem;
   border-bottom: 1px solid #3f3f3f;
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 10000;
@@ -34,6 +34,12 @@ const Logo =styled.img`
   transition: all 0.4s ease;
   &:hover {
     transform: rotate(5deg) scale(1.3);
+  }
+  @media only screen and (max-width: 56.25em) {
+    transition-property: none;
+    &:hover {
+      transform: none !important;
+    }
   }
 `;
 
