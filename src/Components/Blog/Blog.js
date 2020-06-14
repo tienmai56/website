@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import ArticleCardGroup from './ArticleCardGroup';
 
-const BodyBlog = (props) => {
+const Blog = (props) => {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
     axios.get('https://shecodes-blog.herokuapp.com/database-blog')
@@ -14,4 +14,4 @@ const BodyBlog = (props) => {
   );
 }
 
-export default BodyBlog;
+export default Blog;

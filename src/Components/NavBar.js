@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink, Link } from "react-router-dom";
 
 import styled from 'styled-components';
 
@@ -73,7 +74,7 @@ const MenuItem = styled.li`
   box-sizing: border-box;
 `;
 
-const LinkItem = styled.a`
+const LinkItem = styled(NavLink)`
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
   line-height: 1.7;
@@ -84,21 +85,41 @@ const LinkItem = styled.a`
     color: #f0f0f0;
   }
   font-size: 2rem;
-  transition: all 0.4s ease;
+  transition: all 0.4s ease-in-out;
   &:hover {
     cursor: pointer;
     outline: none;
 		background-image: linear-gradient(
 			to right,
 			#e80872,
-			#592368
+      #592368
 		);
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
-		transform: rotate(5deg) scale(1.3);
+    transform: rotate(5deg) scale(1.3);
+  }
+  @media only screen and (max-width: 56.25em) {
+    transition-property: none;
+    &:hover {
+      transform: none !important;
+    }
   }
 `;
+
+const LinkItemActive = (props) => {
+  return (
+  <LinkItem
+    activeStyle={{
+      outline: "none",
+      backgroundImage: "linear-gradient(to right, #e80872, #592368)",
+      WebkitBackgroundClip: "text",
+      backgroundClip: "text",
+      color: "transparent",
+    }}
+    {...props}
+  />);
+}
 
 const ButtonLabel = styled.label`
   height: 7rem;
@@ -153,16 +174,16 @@ const NavBar = (props) => {
     <NavBarHeader>
       <NavBarBox>
         <LogoBox>
-          <a href="/">
+          <Link to="/">
             <Logo src="https://shecodesvietnam.github.io/homepage-2020/assets/logo-2020.png" alt="SheCodes Logo"/>
-          </a>
+          </Link>
         </LogoBox>
         <NavBox>
           <MenuList show={show}>
-            <MenuItem><LinkItem href="/">Hackathon 2020</LinkItem></MenuItem>
-            <MenuItem><LinkItem href="/">Tech Marathon</LinkItem></MenuItem>
-            <MenuItem><LinkItem href="/">Sự kiện khác</LinkItem></MenuItem>
-            <MenuItem last><LinkItem href="/">Blog</LinkItem></MenuItem>
+            <MenuItem><LinkItemActive to="/hackathon" onClick={() => setShow(false)} >Hackathon 2020</LinkItemActive></MenuItem>
+            <MenuItem><LinkItemActive to="/tech-marathon" onClick={() => setShow(false)}>Tech Marathon</LinkItemActive></MenuItem>
+            <MenuItem><LinkItemActive to="/event" onClick={() => setShow(false)}>Sự kiện khác</LinkItemActive></MenuItem>
+            <MenuItem last><LinkItemActive to="/blog" onClick={() => setShow(false)}>Blog</LinkItemActive></MenuItem>
           </MenuList>
         </NavBox>
         <ButtonLabel onClick={() => setShow(!show)}><ButtonIcon/></ButtonLabel>
