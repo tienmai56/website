@@ -1066,6 +1066,7 @@ const FAQsAnswer = styled.div`
   line-height: 1.7;
   color: #f0f0f0;
   text-align: justify;
+  border-top: 0;
 `;
 
 const FAQsItem = (props) => {

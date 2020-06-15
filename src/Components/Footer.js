@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import styled from 'styled-components';
 
@@ -103,7 +104,7 @@ const FooterItem = styled.li`
   box-sizing: border-box;
 `;
 
-const LinkItem = styled.a`
+const LinkItem = styled(Link)`
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
   line-height: 1.7;
@@ -196,11 +197,11 @@ const Footer = (props) => {
       <Row>
         <div className="col-1-of-2">
           <InfoRow>
-            <FooterItem><LinkItem href="/">Đội ngũ</LinkItem></FooterItem>
-            <FooterItem><LinkItem href="/">Liên hệ</LinkItem></FooterItem>
-            <FooterItem><LinkItem href="/">Giới thiệu</LinkItem></FooterItem>
-            <FooterItem><LinkItem href="/">Nhà tài trợ</LinkItem></FooterItem>
-            <FooterItem><LinkItem href="/">FAQs</LinkItem></FooterItem>
+            <FooterItem><LinkItem to="/staffs">Đội ngũ</LinkItem></FooterItem>
+            <FooterItem><LinkItem to="/">Liên hệ</LinkItem></FooterItem>
+            <FooterItem><LinkItem to="/">Giới thiệu</LinkItem></FooterItem>
+            <FooterItem><LinkItem to="/">Nhà tài trợ</LinkItem></FooterItem>
+            <FooterItem><LinkItem to="/">FAQs</LinkItem></FooterItem>
           </InfoRow>
         </div>
         <div className="col-1-of-2">
@@ -208,12 +209,12 @@ const Footer = (props) => {
             <FollowUs>Follow us</FollowUs>
             <MediaList>
               <FooterItem>
-                <LinkItem href="https://www.facebook.com/shecodesvietnam/" target="_blank">
+                <LinkItem as="a" href="https://www.facebook.com/shecodesvietnam/" target="_blank">
                   <MediaItem className="fab fa-facebook" />
                 </LinkItem>
               </FooterItem>
               <FooterItem>
-                <LinkItem href="https://www.linkedin.com/company/shecodeshackathon/" target="_blank">
+                <LinkItem as="a" href="https://www.linkedin.com/company/shecodeshackathon/" target="_blank">
                   <MediaItem className="fab fa-linkedin" />
                 </LinkItem>
               </FooterItem>
