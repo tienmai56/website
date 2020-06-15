@@ -12,7 +12,9 @@ import HomePage from './Components/HomePage/HomePage';
 import Event from './Components/Event/Event';
 import Hackathon from './Components/Hackathon/Hackathon';
 import TechMarathon from './Components/TechMarathon/TechMarathon';
+
 import Staffs from './Components/Staffs/Staffs';
+import Contact from './Components/Contact/Contact';
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
         <Route path="/hackathon" component={Hackathon} />
         <Route path="/tech-marathon" component={TechMarathon} />
         <Route path="/staffs" component={Staffs} />
+        <Route path="/contact" component={Contact} />
       </Switch>
       <Footer />
     </div>
