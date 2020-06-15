@@ -158,6 +158,7 @@ const MediaList = styled.ul`
 
 const MediaItem = styled.i`
   font-size: 2rem;
+  margin: 0 0.5rem;
   transition: transform 0.4s ease !important;
   &:hover {
     cursor: pointer;
@@ -207,17 +208,12 @@ const Footer = (props) => {
             <FollowUs>Follow us</FollowUs>
             <MediaList>
               <FooterItem>
-                <LinkItem href="/">
+                <LinkItem href="https://www.facebook.com/shecodesvietnam/" target="_blank">
                   <MediaItem className="fab fa-facebook" />
                 </LinkItem>
               </FooterItem>
               <FooterItem>
-                <LinkItem href="/">
-                  <MediaItem className="fab fa-instagram" />
-                </LinkItem>
-              </FooterItem>
-              <FooterItem>
-                <LinkItem href="/">
+                <LinkItem href="https://www.linkedin.com/company/shecodeshackathon/" target="_blank">
                   <MediaItem className="fab fa-linkedin" />
                 </LinkItem>
               </FooterItem>

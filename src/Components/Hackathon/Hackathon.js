@@ -830,34 +830,34 @@ const GSMap = [
       image: "https://vuhuycto.github.io/shecodesdemo/assets/tran-vu-anh.jpg",
     },
     {
-      name: "Ms. Nguyen Thuy An",
-      title: "Teacher at Facebook Developer Circles Innovation Challenge",
-      image: "https://vuhuycto.github.io/shecodesdemo/assets/nguye-thuy-an.jpg"
-    },
-  ],
-  [
-    {
-      name: "Mr. Nguyen Sieu Dang",
-      title: "Training director Master in IOT program FPT International Education",
-      image: "https://vuhuycto.github.io/shecodesdemo/assets/nguye-sieu-dang.jpg",
-    },
-    {
       name: "Mr. Ly Quang Huy",
       title: "CTO Iot Gaming Vietnam",
       image: "https://vuhuycto.github.io/shecodesdemo/assets/ly-quang-huy.jpg",
     },
-    {
-      name: "Ms. Elisha Tan",
-      title: "PM Facebook APAC - Founder TechLadies",
-      image: "https://vuhuycto.github.io/shecodesdemo/assets/elisha-tan.jpg"
-    }
   ],
   [
     {
       name: "Ms. Jennie Hoang Phuong",
       title: "CMO INTEK",
       image: "https://vuhuycto.github.io/shecodesdemo/assets/jennie-hoang-phuong.jpg"
-    }
+    },
+    {
+      name: "Ms. Elisha Tan",
+      title: "PM Facebook APAC - Founder TechLadies",
+      image: "https://vuhuycto.github.io/shecodesdemo/assets/elisha-tan.jpg"
+    },
+    {
+      name: "Mr. Nguyen Sieu Dang",
+      title: "Training director Master in IOT program FPT International Education",
+      image: "https://vuhuycto.github.io/shecodesdemo/assets/nguye-sieu-dang.jpg",
+    },
+  ],
+  [
+    {
+      name: "Ms. Nguyen Thuy An",
+      title: "Teacher at Facebook Developer Circles Innovation Challenge",
+      image: "https://vuhuycto.github.io/shecodesdemo/assets/nguye-thuy-an.jpg"
+    },
   ]
 ];
 
@@ -897,46 +897,62 @@ const PartnerBox = styled.div`
 	padding-bottom: 10rem;
 `;
 
-const PartnerMap = [
-  [
+const PartnershipMap = {
+  "Nhà Tài Trợ Kim Cương": ["https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg"],
+  "Nhà Tài Trợ Vàng": ["https://vuhuycto.github.io/shecodesdemo/assets/globalcare-logo.jpg", "https://vuhuycto.github.io/shecodesdemo/assets/openm-logo.jpg"],
+  "Nhà Tài Trợ Bạc": ["https://vuhuycto.github.io/shecodesdemo/assets/sutunam-logo.jpg", "https://vuhuycto.github.io/shecodesdemo/assets/logo-ebiv-.jpg", "https://vuhuycto.github.io/shecodesdemo/assets/colorme-logo.jpg"],
+  "Đối tác": [
+    "https://vuhuycto.github.io/shecodesdemo/assets/Shopee-logo.jpg", 
     "https://vuhuycto.github.io/shecodesdemo/assets/cinnamon-ai-labs-logo.jpg",
-    "https://vuhuycto.github.io/shecodesdemo/assets/colorme-logo.jpg",
     "https://vuhuycto.github.io/shecodesdemo/assets/coworking-space-logo.jpg",
-    "https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg",
-  ],
-  [
-    "https://vuhuycto.github.io/shecodesdemo/assets/globalcare-logo.jpg",
-    "https://vuhuycto.github.io/shecodesdemo/assets/lan-logo.jpg",
-    "https://vuhuycto.github.io/shecodesdemo/assets/logo-ebiv-.jpg",
     "https://vuhuycto.github.io/shecodesdemo/assets/logo-Summit-01-1024x292.jpg",
-  ],
-  [
-    "https://vuhuycto.github.io/shecodesdemo/assets/openm-logo.jpg",
-    "https://vuhuycto.github.io/shecodesdemo/assets/Shopee-logo.jpg",
-    "https://vuhuycto.github.io/shecodesdemo/assets/sutunam-logo.jpg",
   ]
-];
+}
 
-const generatePartnerComponentMap = (partnerMap) => {
-  let partnerComponentMap = [];
-  for (let i = 0; i < partnerMap.length; i++) {
-    const items = partnerMap[i];
-    let partnerItemMap = [];
-    for (let j = 0; j < items.length; j++) {
-      const item = items[j];
-      partnerItemMap.push(
-        <StatisticsColumn className="col-1-of-4" key={"partner_item" + i + j}>
-          <img src={item} alt={item} style={{width: "80%"}}/>
-        </StatisticsColumn>
+const generatePartnershipComponentMap = (partnershipMap) => {
+  let partnershipComponent = [];
+  for (const key in partnershipMap) {
+    if (partnershipMap.hasOwnProperty(key)) {
+      const item = partnershipMap[key];
+      let partnershipItem = [];
+      for (let i = 0; i < item.length; i++) {
+        const element = item[i];
+        let stylePartnership = {width: "80%"};
+        if(window.outerWidth >= 1024) {
+          if(item.length === 1) {
+            stylePartnership["width"] = "30%";
+          }
+          if(item.length === 2) {
+            stylePartnership["width"] = "50%";
+            if(i === 0) stylePartnership["float"] = "right";
+            if(i === 1) stylePartnership["float"] = "left";
+          }
+          else if(item.length === 3) {
+            stylePartnership["width"] = "70%";
+            if(i === 0) stylePartnership["float"] = "right";
+            if(i === 2) stylePartnership["float"] = "left";
+          }
+          else if(item.length === 4) {
+            stylePartnership["width"] = "80%";
+          }
+        }
+        partnershipItem.push(
+          <StatisticsColumn className={"col-1-of-" + item.length} key={"partner_item" + i} >
+            <img src={element} alt={element} style={stylePartnership}/>
+          </StatisticsColumn>
+        )
+      }
+      partnershipComponent.push(
+        <StatisticsRow key={"partner_row" + key}>
+          <StatisticsRow>
+            <GSHeaderIntro>{key}</GSHeaderIntro>
+          </StatisticsRow>
+          {partnershipItem}
+        </StatisticsRow>
       )
     }
-    partnerComponentMap.push(
-      <StatisticsRow key={"partner_row" + i}>
-        {partnerItemMap}
-      </StatisticsRow>
-    );
   }
-  return partnerComponentMap;
+  return partnershipComponent;
 }
 
 const FAQsBox = styled.div`
@@ -1002,7 +1018,7 @@ const FAQsMap = [
   },
   {
     question: "> Thời gian và địa điểm tổ chức SheCodes Hackathon 2020?",
-    ans: ["Sự kiện sẽ diễn ra trong hai ngày: Địa điểm: Sẽ được thông báo sau"]
+    ans: ["Sự kiện sẽ diễn ra trong hai ngày:", ["Hà Nội: 18, 19/7/2020", "Hồ Chí Minh: 25, 26/7/2020"], "Địa điểm: Sẽ được thông báo sau"]
   },
   {
     question: "> Nếu không ở Hà Nội hoặc Hồ Chí Minh thì có thể tham gia SheCodes Hackathon 2020 được không?",
@@ -1010,7 +1026,7 @@ const FAQsMap = [
   },
   {
     question: "> Hackathon 2020 có gì đặc biệt?",
-    ans: ["Câu hỏi của bạn chưa được giải đáp ở trên? Đừng ngần ngại gửi cho ban tổ chức những thắc mắc của bạn qua email shecodes.vietnam@gmail.com hoặc nhắn tin trực tiếp tới inbox của fanpage tại m.me/shecodesvietnam. Bọn mình sẽ cố gắng giải đáp những câu hỏi của bạn sớm nhất có thể!"]
+    ans: ["Câu hỏi của bạn chưa được giải đáp ở trên? Đừng ngần ngại gửi cho ban tổ chức những thắc mắc của bạn qua email nhitran.shecodes@gmail.com (Hà Nội), tranbui.shecodes@gmail.com (Hồ Chí Minh) hoặc nhắn tin trực tiếp tới inbox của fanpage tại m.me/shecodesvietnam. Bọn mình sẽ cố gắng giải đáp những câu hỏi của bạn sớm nhất có thể!"]
   }
 ];
 
@@ -1074,18 +1090,18 @@ const generateFAQsComponentMap = (FAQsMap) => {
       const ans = ans_array[j];
       if(Array.isArray(ans)) {
         ansComponents.push(
-          <ul>
+          <ul key={"ul_faqs_" + j}>
             {ans.map((value, index) => (<li key={"ans_li_" + index} style={{fontSize: "1.6rem", lineHeight: "1.7", margin: "0", padding: "0"}}>{value}</li>))}
           </ul>
         )
       } else {
         ansComponents.push(
-          <p style={{fontSize: "1.6rem", lineHeight: "1.7", margin: "0", padding: "0"}}>{ans}</p>
+          <p style={{fontSize: "1.6rem", lineHeight: "1.7", margin: "0", padding: "0"}} key={"p_faqs_" + j}>{ans}</p>
         )
       }
     }
     FAQsComponentMap.push(
-      <FAQsItem question={item.question} ansComponents={ansComponents}/>
+      <FAQsItem question={item.question} ansComponents={ansComponents} key={"faqs_" + i}/>
     )
   }
   return FAQsComponentMap;
@@ -1141,7 +1157,7 @@ const Hackathon = (props) => {
                 <PurposeItemIcon className="icon-basic-notebook-pen"></PurposeItemIcon>
                 TRANG BỊ KIẾN THỨC
               </PurposeItemHeader>
-              <PurposeParagraph>Cung cấp kiến thức cơ bản đồng thời định hướng nghề nghiệp về những ngành nghề liên quan đến công nghệ thông tin qua teamwork để người chơi tự đi ra khỏi vùng an toàn của bản thân</PurposeParagraph>
+              <PurposeParagraph>Cung cấp kiến thức cơ bản đồng thời định hướng nghề nghiệp về những ngành nghề liên quan đến công nghệ thông tin, giúp người tham gia bước ra khỏi vùng an toàn của mình và khám phá tiềm năng của bản thân</PurposeParagraph>
             </PurposeCard>
           </PurposeColumn>
           <PurposeColumn className="col-1-of-3">
@@ -1150,7 +1166,7 @@ const Hackathon = (props) => {
                 <PurposeItemIcon className="icon-basic-female"></PurposeItemIcon>
                 TẠO SỰ CÔNG BẰNG
               </PurposeItemHeader>
-              <PurposeParagraph>Mang đến cơ hội để phái nữ, không kể có kinh nghiệm lập trình hay chưa, đều được học hỏi và phát triển qua đó tạo ra một xã hội công bằng khi phái nam và phái nữ cùng có cơ hội phát triển</PurposeParagraph>
+              <PurposeParagraph>Mang đến cơ hội để phái nữ, không kể có kinh nghiệm lập trình hay chưa, đều được học hỏi và phát triển qua đó tạo ra một xã hội công bằng giữa phái nam và phái nữ</PurposeParagraph>
             </PurposeCard>
           </PurposeColumn>
           <PurposeColumn className="col-1-of-3">
@@ -1229,13 +1245,13 @@ const Hackathon = (props) => {
               <AgendaHeader>HỒ CHÍ MINH</AgendaHeader>
             </StatisticsRow>
             <AgendaItemBox>
-              <AgendaItemHeader>{'>'} 18 THÁNG 7 NĂM 2020 (THỨ BẢY)</AgendaItemHeader>
+              <AgendaItemHeader>{'>'} 25 THÁNG 7 NĂM 2020 (THỨ BẢY)</AgendaItemHeader>
               <AgendaTimelineBox>
                 {generateAgendaComponentMap(HCMAgendaFirstDayMap)}
               </AgendaTimelineBox>
             </AgendaItemBox>
             <AgendaItemDownBox>
-              <AgendaItemHeader>{'>'} 19 THÁNG 7 NĂM 2020 (CHỦ NHẬT)</AgendaItemHeader>
+              <AgendaItemHeader>{'>'} 26 THÁNG 7 NĂM 2020 (CHỦ NHẬT)</AgendaItemHeader>
               <AgendaTimelineBox>
                 {generateAgendaComponentMap(HCMAgendaSecondDayMap)}
               </AgendaTimelineBox>
@@ -1253,7 +1269,7 @@ const Hackathon = (props) => {
         <StatisticsRow>
           <AgendaHeader>ĐỐI TÁC</AgendaHeader>
         </StatisticsRow>
-        {generatePartnerComponentMap(PartnerMap)}
+        {generatePartnershipComponentMap(PartnershipMap)}
       </PartnerBox>
       <article>
         <img src="https://vuhuycto.github.io/shecodesdemo/assets/B%C3%A0i%20bung.gif" alt="inspiration" style={{display: "block", width: "100%"}}/>
