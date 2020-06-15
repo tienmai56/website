@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
+
 const HackathonBox = styled.div`
   margin: auto;
   margin-top: 6rem;
@@ -1108,7 +1111,57 @@ const generateFAQsComponentMap = (FAQsMap) => {
   return FAQsComponentMap;
 }
 
+const SwitchAgendaButtonGroup = styled(ButtonGroup)`
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex !important;
+  justify-content: center;
+  @media only screen and (max-width: 56.25em) {
+    margin-bottom: 6rem;
+    flex-direction: column-reverse !important;
+  }
+`;
+
+const SwitchAgendaButton = styled(ToggleButton)`
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 30%;
+  color: #fbfeff !important;
+  background-color: #161616 !important;
+  display: inline;
+  letter-spacing: 0.2rem;
+  text-align: center !important;
+  font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  opacity: ${props => props.checked ? 0.7 : 0.3 };
+  border-top-right-radius: ${props => props.value === '1' ? "10000rem" : "0" } !important;
+  border-bottom-right-radius: ${props => props.value === '1' ? "10000rem" : "0" } !important;
+  border-top-left-radius: ${props => props.value === '2' ? "10000rem" : "0" } !important;
+  border-bottom-left-radius: ${props => props.value === '2' ? "10000rem" : "0" } !important;
+  position: relative !important;
+  left: ${props => props.value === '1' ? "50%" : "auto" };
+  right: ${props => props.value === '2' ? "50%" : "auto" };
+  @media only screen and (max-width: 56.25em) {
+    left: auto;
+    right: auto;
+    border-radius: 0 !important;
+    font-size: 2rem;
+    width: 100%;
+  }
+`;
+
 const Hackathon = (props) => {
+  const [agenda, setAgenda] = useState('1');
+  const agendaRadio = [
+    { name: 'Hồ Chí Minh', value: '1' },
+    { name: 'Hà Nội', value: '2' },
+  ];
+
   return (
     <HackathonBox>
       <HeaderBox>
@@ -1224,10 +1277,24 @@ const Hackathon = (props) => {
           <AgendaHeader>NỘI DUNG CHƯƠNG TRÌNH</AgendaHeader>
         </StatisticsRow>
         <AgendaRow>
-          <StatisticsColumn className="col-1-of-2">
-            <StatisticsRow>
-              <AgendaHeader>HÀ NỘI</AgendaHeader>
-            </StatisticsRow>
+          <StatisticsRow>
+          <SwitchAgendaButtonGroup toggle>
+            {agendaRadio.map((radio, idx) => (
+              <SwitchAgendaButton
+                key={idx}
+                type="radio"
+                variant="secondary"
+                name="radio"
+                value={radio.value}
+                checked={agenda === radio.value}
+                onChange={(e) => setAgenda(e.currentTarget.value)}
+              >
+              {radio.name}
+              </SwitchAgendaButton>
+            ))}
+          </SwitchAgendaButtonGroup>
+          </StatisticsRow>
+          <StatisticsColumn hidden={agenda !== '2'} style={{float: "none", margin: 0}}>
             <AgendaItemBox>
               <AgendaItemHeader>{'>'} 18 THÁNG 7 NĂM 2020 (THỨ BẢY)</AgendaItemHeader>
               <AgendaTimelineBox>
@@ -1241,10 +1308,7 @@ const Hackathon = (props) => {
               </AgendaTimelineBox>
             </AgendaItemDownBox>
           </StatisticsColumn>
-          <StatisticsColumn className="col-1-of-2">
-            <StatisticsRow>
-              <AgendaHeader>HỒ CHÍ MINH</AgendaHeader>
-            </StatisticsRow>
+          <StatisticsColumn hidden={agenda !== '1'} style={{float: "none", margin: 0}}>
             <AgendaItemBox>
               <AgendaItemHeader>{'>'} 25 THÁNG 7 NĂM 2020 (THỨ BẢY)</AgendaItemHeader>
               <AgendaTimelineBox>
