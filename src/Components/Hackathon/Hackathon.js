@@ -1156,7 +1156,7 @@ const SwitchAgendaButton = styled(ToggleButton)`
 `;
 
 const Hackathon = (props) => {
-  const [agenda, setAgenda] = useState('1');
+  const [agenda, setAgenda] = useState('2');
   const agendaRadio = [
     { name: 'Hồ Chí Minh', value: '1' },
     { name: 'Hà Nội', value: '2' },
