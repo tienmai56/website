@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import './style/icon-font.css';
 
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
@@ -17,11 +17,13 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Route exact={true} path="/" component={HomePage}/>
-      <Route path="/blog" component={Blog}/>
-      <Route path="/event" component={Event} />
-      <Route path="/hackathon" component={Hackathon} />
-      <Route path="/tech-marathon" component={TechMarathon} />
+      <Switch>
+        <Route exact={true} path="/" component={HomePage}/>
+        <Route path="/blog" component={Blog}/>
+        <Route path="/event" component={Event} />
+        <Route path="/hackathon" component={Hackathon} />
+        <Route path="/tech-marathon" component={TechMarathon} />
+      </Switch>
       <Footer />
     </div>
   );

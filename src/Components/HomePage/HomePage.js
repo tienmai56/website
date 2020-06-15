@@ -524,7 +524,7 @@ const HomePage = (props) => {
           <CountDownHeader as="span">{timeLeft}</CountDownHeader>
         </HeaderTextBox>
         <RegistrationBox>
-          <RegistrationButton href="https://docs.google.com/forms/d/e/1FAIpQLSfSLJ8l2dbgT1aM_IgFe-ja3DWZG0KKSOBRlWQslaMNkQKmAA/viewform">Đăng ký tham gia</RegistrationButton>
+          <RegistrationButton href="https://docs.google.com/forms/d/e/1FAIpQLSfSLJ8l2dbgT1aM_IgFe-ja3DWZG0KKSOBRlWQslaMNkQKmAA/viewform" target="_blank">Đăng ký tham gia</RegistrationButton>
         </RegistrationBox>
       </HeaderImageBox>
       <AboutBox>
