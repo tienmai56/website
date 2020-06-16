@@ -8,7 +8,8 @@ const Blog = (props) => {
   useEffect(() => {
     if(articles.length === 0) {
       axios.get('https://shecodes-blog.herokuapp.com/database-blog')
-        .then(res => {setArticles(res.data)});
+        .then(res => {setArticles(res.data)})
+        .catch(err => {console.log(err);});
     }
   }, [articles]);
   return (

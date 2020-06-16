@@ -200,7 +200,7 @@ const Footer = (props) => {
             <FooterItem><LinkItem to="/staffs">Đội ngũ</LinkItem></FooterItem>
             <FooterItem><LinkItem to="/contact">Liên hệ</LinkItem></FooterItem>
             <FooterItem><LinkItem to="/">Giới thiệu</LinkItem></FooterItem>
-            <FooterItem><LinkItem to="/">Nhà tài trợ</LinkItem></FooterItem>
+            <FooterItem><LinkItem to="/sponsors">Nhà tài trợ</LinkItem></FooterItem>
             <FooterItem><LinkItem to="/faqs">FAQs</LinkItem></FooterItem>
           </InfoRow>
         </div>

@@ -10,6 +10,9 @@ const GroupBox = styled.table`
   margin-top: 6rem;
   display: flex;
   justify-content: center;
+  background-color: #000;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 `;
 
 const GroupRowBox = styled.tr`
@@ -31,8 +34,8 @@ const GroupItemBox = styled.th`
 }
 `;
 
-const GenerateTable = (data, th_per_tr) => {
-  th_per_tr = Math.floor( Math.min(window.outerWidth, 1140)/302 );
+const GenerateTable = (data) => {
+  let th_per_tr = Math.floor( Math.min(window.outerWidth, 1140)/302 );
   let trs = [];
   for(let i = 0; i < data.length; i += th_per_tr) {
     let ths = [];
@@ -56,7 +59,7 @@ const ArticleCardGroup = (props) => {
   return (
     <GroupBox>
       <tbody>
-        {GenerateTable(props.articles, 4)}
+        {GenerateTable(props.articles)}
       </tbody>
     </GroupBox>
   );

@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 
+const githubRawAsserts = "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/";
+
 const HackathonBox = styled.div`
   margin: auto;
   margin-top: 6rem;
@@ -905,7 +907,7 @@ const PartnerBox = styled.div`
 `;
 
 const PartnershipMap = {
-  "Nhà Tài Trợ Kim Cương": ["https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg"],
+  "Nhà Tài Trợ Kim Cương": ["https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg", githubRawAsserts + "sponsors/OSAM.png"],
   "Nhà Tài Trợ Vàng": ["https://vuhuycto.github.io/shecodesdemo/assets/globalcare-logo.jpg", "https://vuhuycto.github.io/shecodesdemo/assets/openm-logo.jpg"],
   "Nhà Tài Trợ Bạc": ["https://vuhuycto.github.io/shecodesdemo/assets/sutunam-logo.jpg", "https://vuhuycto.github.io/shecodesdemo/assets/logo-ebiv-.jpg", "https://vuhuycto.github.io/shecodesdemo/assets/colorme-logo.jpg"],
   "Đối tác": [

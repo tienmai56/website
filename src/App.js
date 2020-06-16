@@ -16,6 +16,7 @@ import TechMarathon from './Components/TechMarathon/TechMarathon';
 import Staffs from './Components/Staffs/Staffs';
 import Contact from './Components/Contact/Contact';
 import FAQ from './Components/FAQ/FAQ';
+import Sponsors from './Components/Sponsors/Sponsors';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/staffs" component={Staffs} />
         <Route path="/contact" component={Contact} />
         <Route path="/faqs" component={FAQ} />
+        <Route path="/sponsors" component={Sponsors} />
       </Switch>
       <Footer />
     </div>
