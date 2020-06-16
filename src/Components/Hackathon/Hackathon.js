@@ -336,6 +336,10 @@ const RegistrationButton = styled.a`
   }
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
+  &:hover, &:link, &visited, &:active {
+    text-decoration: none;
+    color: #fbfeff;
+  }
 `;
 
 const EvaluationBox = styled.div`

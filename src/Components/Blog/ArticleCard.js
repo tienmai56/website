@@ -14,7 +14,7 @@ const CardBox = styled.div`
 		#592368
   );
   padding: 1rem;
-  width: 30rem;
+  width: 100%;
   height: 100%;
   overflow: hidden;
   display: flex; 
@@ -64,12 +64,18 @@ const CardText = styled.span`
   font-weight: 400;
   line-height: 1.7;
   color: #f0f0f0;
+`;
+
+const LinkCard = styled.a`
   text-decoration: none !important;
+  &:hover, &:link, &:active, &:visited {
+    text-decoration: none !important;
+  }
 `;
 
 const ArticleCard = (props) => {
   return (
-    <a href={props.article.link} target="_blank" rel="noopener noreferrer" style={{overflow: "hidden"}}>
+    <LinkCard href={props.article.link} target="_blank" rel="noopener noreferrer" style={{overflow: "hidden"}}>
       <CardBox>
         <CardImageBox>
           <CardImage src={props.article.image}/>
@@ -78,7 +84,7 @@ const ArticleCard = (props) => {
           <CardText>{props.article.title}</CardText>
         </CardTextBox>
       </CardBox>
-    </a>
+    </LinkCard>
   );
 }
 
