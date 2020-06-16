@@ -197,17 +197,18 @@ const SponsorsThankYouTextBox = styled.div`
   font-family: 'Courier New', Courier, monospace;
   width: 100%;
   margin: 0 auto;
-  padding-top: 8rem !important;
-  padding-bottom: 5rem !important;
+  padding-top: 6rem !important;
+  padding-bottom: 7rem !important;
   @media only screen and (max-width: 75em) {
     top: 40%; 
     padding-top: 3rem !important;
   }
+  max-width: 1140px;
 `;
 
 const SponsorsThankYouText = styled.h1`
-  font-size: 7rem;
-  width: 80%;
+  font-size: 4rem;
+  width: 95%;
   margin: 0 auto;
   line-height: 10rem;
   background-image: linear-gradient(to right, #e80872, #592368);
@@ -215,7 +216,7 @@ const SponsorsThankYouText = styled.h1`
   background-clip: text;
   color: transparent;
   @media only screen and (max-width: 56.25em) {
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 6rem; 
   }
   text-align: center !important;
@@ -229,7 +230,7 @@ const Sponsors = (props) => {
     <SponsorsBox>
       <SponsorsThankyouBox>
         <SponsorsThankYouTextBox>
-          <SponsorsThankYouText>SheCodes Vietnam rất mong được đồng hành với các tổ chức để cùng nhau phát triển sự tham gia của phái nữ trong công nghệ</SponsorsThankYouText>
+          <SponsorsThankYouText>Shecodes Việt Nam chân thành cảm ơn sâu sắc các nhà tài trợ, các doanh nghiệp, tổ chức đã, đang và sẽ đồng hành cùng chúng tôi thực hiện giấc mơ trao quyền, khuyến khích phái nữ dấn thân vào lĩnh vực công nghệ, gia tăng nguồn nhân lực chất lượng, nhiệt huyết, đóng góp tích cực vào công cuộc chuyển đổi số hoá tại Việt Nam.</SponsorsThankYouText>
         </SponsorsThankYouTextBox>
       </SponsorsThankyouBox>
       <SponsorsRow>

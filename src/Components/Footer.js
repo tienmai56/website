@@ -130,6 +130,12 @@ const LinkItem = styled(Link)`
 		color: transparent;
 		transform: rotate(5deg) scale(1.3);
   }
+  @media only screen and (max-width: 56.25em) {
+    transition-property: none;
+    &:hover {
+      transform: none !important;
+    }
+  }
 `;
 
 const MediaBox = styled.div`
@@ -199,7 +205,7 @@ const Footer = (props) => {
           <InfoRow>
             <FooterItem><LinkItem to="/staffs">Đội ngũ</LinkItem></FooterItem>
             <FooterItem><LinkItem to="/contact">Liên hệ</LinkItem></FooterItem>
-            <FooterItem><LinkItem to="/">Giới thiệu</LinkItem></FooterItem>
+            <FooterItem><LinkItem to="/about">Giới thiệu</LinkItem></FooterItem>
             <FooterItem><LinkItem to="/sponsors">Nhà tài trợ</LinkItem></FooterItem>
             <FooterItem><LinkItem to="/faqs">FAQs</LinkItem></FooterItem>
           </InfoRow>

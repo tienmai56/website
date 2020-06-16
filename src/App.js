@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Route exact path="(/|/blog|/event|/hackathon|/tech-marathon|/staffs|/contact|/faqs|/sponsors)" component={AppSwitcher}/>
+      <Route exact path="(/|/blog|/event|/hackathon|/tech-marathon|/staffs|/contact|/faqs|/sponsors|/about)" component={AppSwitcher}/>
       <Footer />
     </div>
   );

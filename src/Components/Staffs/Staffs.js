@@ -263,7 +263,7 @@ const staffsMap = {
       image: "HCM/Marketing_Huynh_Nguyen_Ngan_Thy.jpg"
     }
   ],
-  "Sponsorship/Partnership": [
+  "Partnership": [
     {
       name: "Nguyễn Thạc Linh Chi",
       image: "HN/Partnership_Nguyen_Thac_Linh_Chi.png"

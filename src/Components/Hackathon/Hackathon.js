@@ -1006,7 +1006,7 @@ const FAQsMap = [
     ans: ["Tất cả các bạn nữ từ 16 tuổi trở lên đều có thể tham gia dự thi nha!"]
   },
   {
-    question: "> Nam giới có thể tham dự SheCodes Hackathon 2019 được không?",
+    question: "> Nam giới có thể tham dự SheCodes Hackathon 2020 được không?",
     ans: ["Nam giới có thể tới và tham gia các buổi tech talk và workshop có 1-0-2 với những chuyên gia hàng đầu trong lĩnh vực Công nghệ thông tin về nhiều chủ đề như HTML/CSS, ngôn ngữ lập trình Python và Javascript, hay Machine learning, Blockchain, và AI crashcourse. Tuy nhiên, nam giới không được tham gia dự thi hackathon."]
   },
   {

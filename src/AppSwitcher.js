@@ -9,8 +9,9 @@ import Staffs from './Components/Staffs/Staffs';
 import Contact from './Components/Contact/Contact';
 import FAQ from './Components/FAQ/FAQ';
 import Sponsors from './Components/Sponsors/Sponsors';
+import About from './Components/About/About';
 
-const components = ["/", "/blog", "/event", "/hackathon", "/tech-marathon", "/staffs", "/contact", "/faqs", "/sponsors"];
+const components = ["/", "/blog", "/event", "/hackathon", "/tech-marathon", "/staffs", "/contact", "/faqs", "/sponsors", "/about"];
 
 const AppSwitcher = (props) => {
   const [displayComponent, setDisplayComponents] = useState(components[0]);
@@ -45,6 +46,9 @@ const AppSwitcher = (props) => {
       </div>
       <div hidden={displayComponent !== components[8]}>
         <Sponsors />
+      </div>
+      <div hidden={displayComponent !== components[9]}>
+        <About />
       </div>
     </div>
   );
