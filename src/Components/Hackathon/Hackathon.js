@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -1167,13 +1167,20 @@ const Hackathon = (props) => {
     { name: 'Hồ Chí Minh', value: '1' },
     { name: 'Hà Nội', value: '2' },
   ];
-
+  const [videoSrc, setVideoSrc] = useState(null);
+  useEffect(() => {
+    if(videoSrc === null) {
+      if(!props.dontDownload){
+        setVideoSrc(<source src="https://vuhuycto.github.io/shecodesdemo/assets/hackathon2020.mp4" type="video/mp4"/>);
+      }
+    }
+  }, [props.dontDownload, videoSrc])
   return (
     <HackathonBox>
       <HeaderBox>
         <VideoBox>
           <VideoIntro autoPlay muted loop>
-            <source src="https://vuhuycto.github.io/shecodesdemo/assets/hackathon2020.mp4" type="video/mp4"/>
+            {videoSrc}
           </VideoIntro>
         </VideoBox>
         <HeaderHackathon>SheCodes Hackathon 2020</HeaderHackathon>

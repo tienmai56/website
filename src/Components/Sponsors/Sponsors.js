@@ -86,7 +86,6 @@ const SponsorsHeader = styled.h2`
   margin: 0;
 `;
 
-
 const SponsorsBox = styled.div`
   margin: auto;
   margin-top: 6rem;
@@ -185,9 +184,54 @@ const generateSponsorsComponentMap = (partnershipMap) => {
   return partnershipComponent;
 }
 
+const SponsorsThankyouBox = styled.div`
+  width: 100%;
+  margin-top: 6rem;
+  background-color: #161616;
+  border-bottom: 1px solid #3f3f3f;
+  @media only screen and (max-width: 25em) {
+  }
+`;
+
+const SponsorsThankYouTextBox = styled.div`
+  font-family: 'Courier New', Courier, monospace;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 8rem !important;
+  padding-bottom: 5rem !important;
+  @media only screen and (max-width: 75em) {
+    top: 40%; 
+    padding-top: 3rem !important;
+  }
+`;
+
+const SponsorsThankYouText = styled.h1`
+  font-size: 7rem;
+  width: 80%;
+  margin: 0 auto;
+  line-height: 10rem;
+  background-image: linear-gradient(to right, #e80872, #592368);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  @media only screen and (max-width: 56.25em) {
+    font-size: 3rem;
+    line-height: 6rem; 
+  }
+  text-align: center !important;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  box-sizing: border-box;
+`;
+
 const Sponsors = (props) => {
   return(
     <SponsorsBox>
+      <SponsorsThankyouBox>
+        <SponsorsThankYouTextBox>
+          <SponsorsThankYouText>SheCodes Vietnam rất mong được đồng hành với các tổ chức để cùng nhau phát triển sự tham gia của phái nữ trong công nghệ</SponsorsThankYouText>
+        </SponsorsThankYouTextBox>
+      </SponsorsThankyouBox>
       <SponsorsRow>
         <SponsorsHeader>NHÀ TÀI TRỢ</SponsorsHeader>
       </SponsorsRow>

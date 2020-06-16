@@ -29,7 +29,7 @@ const AppSwitcher = (props) => {
         <Event />
       </div>
       <div hidden={displayComponent !== components[3]}>
-        <Hackathon />
+        <Hackathon dontDownload={displayComponent !== components[3]}/>
       </div>
       <div hidden={displayComponent !== components[4]}>
         <TechMarathon />
