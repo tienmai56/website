@@ -15,6 +15,7 @@ import TechMarathon from './Components/TechMarathon/TechMarathon';
 
 import Staffs from './Components/Staffs/Staffs';
 import Contact from './Components/Contact/Contact';
+import FAQ from './Components/FAQ/FAQ';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/tech-marathon" component={TechMarathon} />
         <Route path="/staffs" component={Staffs} />
         <Route path="/contact" component={Contact} />
+        <Route path="/faqs" component={FAQ} />
       </Switch>
       <Footer />
     </div>

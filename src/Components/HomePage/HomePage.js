@@ -411,6 +411,18 @@ const FeaturesLink = styled(Link)`
   line-height: 1.7;
   float: left;
   &:hover, &:active, &:focus {
+    text-decoration: none;
+    font-size: 1.6rem;
+    background-image: linear-gradient(to right, #e80872, #592368);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: all 0.4s;
+    display: inline-block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    float: left;
     border-bottom: 1px solid #e80872; 
   }
   &:hover::after, &:active::after, &:focus::after {
