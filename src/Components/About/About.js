@@ -71,21 +71,6 @@ const AboutRow = styled.div`
   }
 `;
 
-const AboutHeader = styled.h2`
-  font-size: 4rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #fbfeff;
-  display: inline-block;
-  letter-spacing: 0.2rem;
-  transition: all 0.2s; 
-  padding-top: 8rem !important;
-  @media only screen and (max-width: 56.25em) {
-    padding-top: 5rem !important; 
-  }
-  margin: 0;
-`;
-
 const AboutBox = styled.div`
   margin: auto;
   margin-top: 6rem;
