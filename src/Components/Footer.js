@@ -193,7 +193,6 @@ const CopyRight = styled.p`
   padding: 0;
 `;
 
-/*eslint-disable */
 const Footer = (props) => {
   return (
     <FooterBox>
@@ -228,7 +227,7 @@ const Footer = (props) => {
           </MediaBox>
         </div>
       </Row>
-      <CopyRight>Thiết kế và phát triển với 💖 bởi SheCodes Hà Nội</CopyRight>
+      <CopyRight>Thiết kế và phát triển với <span role="img" style={{fontSize: "2rem"}} aria-label="heart">💖</span> bởi SheCodes Hà Nội</CopyRight>
     </FooterBox>
   );
 }

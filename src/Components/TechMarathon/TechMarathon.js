@@ -365,7 +365,7 @@ const MarathonForm = styled.article`
   padding-top: 15rem;
   padding-bottom: 10rem;
   background-image: linear-gradient(to right, rgba(22, 22, 22, 0.8), rgba(0, 0, 0, 0.8)), url('https://vuhuycto.github.io/shecodesdemo/assets/precoding-3.jpg');
-  background-position: center;
+  background-position: 0% 35%;
   background-size: cover;
 `;
 
@@ -426,7 +426,7 @@ const TechMarathon = (props) => {
           <MarathonAboutHeaderText>ĐĂNG KÝ THAM GIA LỚP HỌC</MarathonAboutHeaderText>
         </MarathonRow>
         <MarathonRow>
-          <MarathonContactText>Chương trình đã kết thúc 😢 Hẹn gặp bạn vào những chương trình khác của SheCodes</MarathonContactText>
+          <MarathonContactText>Chương trình đã kết thúc <span role="img" style={{fontSize: "2.4rem"}} aria-label="sad">😢</span> Hẹn gặp các bạn ở các lớp tech marathon tiếp theo</MarathonContactText>
         </MarathonRow>
       </MarathonForm>
       <MarathonAboutBox >
