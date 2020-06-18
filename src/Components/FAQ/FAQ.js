@@ -42,6 +42,7 @@ const FAQMap = [
         "href": "https://www.facebook.com/groups/shecodes.hackathon/",
         "insideText": "Hackathon",
       },
+      ".",
       {
         "as": "br",
       },

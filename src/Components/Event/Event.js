@@ -190,20 +190,20 @@ const years = [
   {
     year: 2020,
     title: "Bùng nổ",
-    content: "Đánh dấu là một năm bùng nổ của SheCodes trong việc đồng hành giúp phái nữ dấn thân vào CNTT với những hàng loạt sự kiện công nghệ mới như IT Fair, Tech Marathon, Tech Talk cùng với sự trở lại của SheCodes Hackathon 2020 được tổ chức đồng thời ở cả Hà Nội và Hồ Chí Minh.",
+    content: "Đánh dấu là một năm bùng nổ của SheCodes trong việc đồng hành giúp phái nữ dấn thân vào CNTT với hàng loạt sự kiện công nghệ mới như IT Fair, Tech Marathon, Tech Talk cùng với sự trở lại của SheCodes Hackathon 2020 được tổ chức đồng thời ở cả Hà Nội và Hồ Chí Minh.",
     more: "2020",
     event: [
-      {
-        location: "Hà Nội",
-        time: "4/2020",
-        title: "Tech Marathon",
-        content: 'Chuỗi các lớp học "crash course" trong vòng 3 ngày dành cho những người chưa có kinh nghiệp lập trình, tập trung vào hai mảng: Kỹ năng lập trình (Technical skills) & Định hướng nghề nghiệp (Career Exploration).',
-      },
       {
         location: "Hà Nội",
         time: "5/2020",
         title: "IT Fair",
         content: "Cùng VOCF đồng tổ chức chương trình Tech Online Career Fair 2020 nhằm hỗ trợ trang bị kỹ năng nghề nghiệp và tìm kiếm cơ hội việc làm trong ngành IT.",
+      },
+      {
+        location: "Hà Nội",
+        time: "4/2020",
+        title: "Tech Marathon",
+        content: 'Chuỗi các lớp học "crash course" trong vòng 3 ngày dành cho những người chưa có kinh nghiệp lập trình, tập trung vào hai mảng: Kỹ năng lập trình (Technical skills) & Định hướng nghề nghiệp (Career Exploration).',
       },
     ]
   },
@@ -214,10 +214,16 @@ const years = [
     more: "2019",
     event: [
       {
+        location: "Hồ Chí Minh",
+        time: "12/2019",
+        title: "Workshop Breaking into Product Management",
+        content: "Chia sẻ những thông tin về ngành PM cũng như cơ hội việc làm, nhu cầu nhân lực của ngành hiện nay tại Việt Nam."
+      },
+      {
         location: "Hà Nội",
         time: "7/2019",
         title: "SheCodes Hackathon",
-        content: "",
+        content: "Song song với coding là 5 tech talk và 9 workshop đến từ khách mời và mentor giúp thí sinh hoàn thành tốt nhất sản phẩm của mình.",
       },
       {
         location: "Hồ Chí Minh",
@@ -225,12 +231,6 @@ const years = [
         title: "Workshop Girl in Data Science",
         content: "Chia sẻ kinh nghiệm của hai diễn giả trong lĩnh vực Data Analytics và Business Analytics."
       },
-      {
-        location: "Hồ Chí Minh",
-        time: "12/2019",
-        title: "Workshop Breaking into Product Management",
-        content: "Chia sẻ những thông tin về ngành PM cũng như cơ hội việc làm, nhu cầu nhân lực của ngành hiện nay tại Việt Nam."
-      }
     ]
   },
   {
@@ -240,10 +240,10 @@ const years = [
     more: "2018",
     event: [
       {
-        location: "Hà Nội",
-        time: "7/2018",
-        title: "SheCodes Hackathon",
-        content: "Sân chơi hackathon dành riêng cho phái nữ đầu tiên tại Việt Nam.",
+        location: "Hồ Chí Minh",
+        time: "12/2018",
+        title: "Workshop Introducing to WebPack",
+        content: "Cung cấp trải nghiệm setup Webpack 4 từ Scratch để xây dựng một sản phẩm ứng dụng hoàn chỉnh."
       },
       {
         location: "Hà Nội",
@@ -252,11 +252,11 @@ const years = [
         content: "Chuỗi sự kiện chia sẻ và định hướng cho nữ giới trong lĩnh vực công nghệ thông tin.",
       },
       {
-        location: "Hồ Chí Minh",
-        time: "12/2018",
-        title: "Workshop Introducing to WebPack",
-        content: "Cung cấp trải nghiệm setup Webpack 4 từ Scratch để xây dựng một sản phẩm ứng dụng hoàn chỉnh."
-      }
+        location: "Hà Nội",
+        time: "7/2018",
+        title: "SheCodes Hackathon",
+        content: "Sân chơi hackathon dành riêng cho phái nữ đầu tiên tại Việt Nam.",
+      },
     ]
   },
 ];
@@ -315,6 +315,9 @@ const YearItem = styled.div`
     flex-direction: column;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+    &:not(:last-child) {
+      margin-bottom: 10rem;
+    }
   }
 `;
 
@@ -336,6 +339,7 @@ const YearItemMetadata = styled.h3`
 const YearItemTitle = styled.h3`
   font-size: 2.4rem;
   font-weight: 700;
+  text-transform: uppercase;
   color: #fbfeff;
   font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
   line-height: 1.7;

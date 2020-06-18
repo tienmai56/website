@@ -247,9 +247,9 @@ const FeaturesMap = [
     content: [
       "Không chỉ có giờ học trên lớp, Tech Marathon còn đan xen hoạt động như:",
       [
-        "Q&A: Hỏi đáp",
-        "Giờ chữa bài và định hướng tư duy",
-        "Group học tập online",
+        "Q&A: Hỏi đáp.",
+        "Giờ chữa bài và định hướng tư duy.",
+        "Group học tập online.",
         "Tương tác trong giờ học: hình ảnh, âm thanh, công nghệ. Biết đâu học xong bạn lại rinh được vài tips, trang web hay ho có thể ứng dụng trong công việc của mình nhỉ."
       ],
       "Ngoài ra, các bạn được cung cấp tài liệu, bài giảng trước khi đến lớp. Hãy sắp xếp thời gian và chuẩn bị một tâm thế sẵn sàng, tự tin nhất tham gia lớp học nhé."

@@ -194,7 +194,6 @@ const SponsorsThankyouBox = styled.div`
 `;
 
 const SponsorsThankYouTextBox = styled.div`
-  font-family: 'Courier New', Courier, monospace;
   width: 100%;
   margin: 0 auto;
   padding-top: 6rem !important;
@@ -210,17 +209,17 @@ const SponsorsThankYouText = styled.h1`
   font-size: 4rem;
   width: 95%;
   margin: 0 auto;
-  line-height: 10rem;
+  line-height: 1.7;
   background-image: linear-gradient(to right, #e80872, #592368);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   @media only screen and (max-width: 56.25em) {
     font-size: 2rem;
-    line-height: 6rem; 
+    line-height: 1.5;
   }
   text-align: center !important;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
   box-sizing: border-box;
 `;

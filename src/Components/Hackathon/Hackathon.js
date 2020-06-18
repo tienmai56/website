@@ -995,7 +995,7 @@ const FAQsMap = [
   },
   {
     question: "> Vì sao mình nên tham dự SheCodes Hackathon 2020?",
-    ans: ["Bước vào hành trình SheCodes Hackathon 2019, thí sinh và người tham dự sẽ có cơ hội:", ["Tham gia các buổi workshop và tech talk có 1-0-2 nhằm trang bị những kiến thức, kĩ năng chuyên môn cần thiết trong ngành IT", "Thỏa sức sáng tạo, kề vai sát cánh cùng chị em đồng đội xây dựng và thực hiện những ý tưởng táo bạo, đột phá", "Kết nối với đội ngũ mentors cực “cool” cùng ban giám khảo là những chuyên gia, lập trình viên kỳ cựu, các nhà tuyển dụng đầu ngành", "Được hỗ trợ ăn ở, trải qua 2 NGÀY 1 ĐÊM trong bầu không khí cởi mở, tràn đầy nhiệt huyết và hừng hực khí thế của các đội chơi"], "Đem về giải thưởng hấp dẫn và giấy chứng nhận từ tổ chức SheCodes Vietnam"]
+    ans: ["Bước vào hành trình SheCodes Hackathon 2019, thí sinh và người tham dự sẽ có cơ hội:", ["Tham gia các buổi workshop và tech talk có 1-0-2 nhằm trang bị những kiến thức, kĩ năng chuyên môn cần thiết trong ngành IT.", "Thỏa sức sáng tạo, kề vai sát cánh cùng chị em đồng đội xây dựng và thực hiện những ý tưởng táo bạo, đột phá.", "Kết nối với đội ngũ mentors cực “cool” cùng ban giám khảo là những chuyên gia, lập trình viên kỳ cựu, các nhà tuyển dụng đầu ngành.", "Được hỗ trợ ăn ở, trải qua 2 NGÀY 1 ĐÊM trong bầu không khí cởi mở, tràn đầy nhiệt huyết và hừng hực khí thế của các đội chơi."], "Đem về giải thưởng hấp dẫn và giấy chứng nhận từ tổ chức SheCodes Vietnam."]
   },
   {
     question: "> Nếu mình không có bất kì kinh nghiệm lập trình nào thì có tham gia thi được không?",
@@ -1216,7 +1216,7 @@ const Hackathon = (props) => {
                 <PurposeItemIcon className="icon-basic-notebook-pen"></PurposeItemIcon>
                 TRANG BỊ KIẾN THỨC
               </PurposeItemHeader>
-              <PurposeParagraph>Cung cấp kiến thức cơ bản đồng thời định hướng nghề nghiệp về những ngành nghề liên quan đến công nghệ thông tin, giúp người tham gia bước ra khỏi vùng an toàn của mình và khám phá tiềm năng của bản thân</PurposeParagraph>
+              <PurposeParagraph>Cung cấp kiến thức cơ bản đồng thời định hướng nghề nghiệp về những ngành nghề liên quan đến công nghệ thông tin, giúp người tham gia bước ra khỏi vùng an toàn của mình và khám phá tiềm năng của bản thân.</PurposeParagraph>
             </PurposeCard>
           </PurposeColumn>
           <PurposeColumn className="col-1-of-3">
@@ -1225,7 +1225,7 @@ const Hackathon = (props) => {
                 <PurposeItemIcon className="icon-basic-female"></PurposeItemIcon>
                 TẠO SỰ CÔNG BẰNG
               </PurposeItemHeader>
-              <PurposeParagraph>Mang đến cơ hội để phái nữ, không kể có kinh nghiệm lập trình hay chưa, đều được học hỏi và phát triển qua đó tạo ra một xã hội công bằng giữa phái nam và phái nữ</PurposeParagraph>
+              <PurposeParagraph>Mang đến cơ hội để phái nữ, không kể có kinh nghiệm lập trình hay chưa, đều được học hỏi và phát triển qua đó tạo ra một xã hội công bằng giữa phái nam và phái nữ.</PurposeParagraph>
             </PurposeCard>
           </PurposeColumn>
           <PurposeColumn className="col-1-of-3">
@@ -1234,7 +1234,7 @@ const Hackathon = (props) => {
                 <PurposeItemIcon className="icon-basic-server2"></PurposeItemIcon>
                 NHẬN THỨC SỨC MẠNH CÔNG NGHỆ
               </PurposeItemHeader>
-              <PurposeParagraph>Giúp phái nữ nhận thức được tầm quan trọng của công nghệ thông tin trong việc giải quyết những vấn đề xã hội và tạo nên ảnh hưởng tích cực tới cộng đồng</PurposeParagraph>
+              <PurposeParagraph>Giúp phái nữ nhận thức được tầm quan trọng của công nghệ thông tin trong việc giải quyết những vấn đề xã hội và tạo nên ảnh hưởng tích cực tới cộng đồng.</PurposeParagraph>
             </PurposeCard>
           </PurposeColumn>
         </PurposeRow>
