@@ -73,7 +73,7 @@ const CountDownHeader = styled(HeaderText)`
 `;
 
 const calculateTimeLeft = () => {
-  const difference = new Date("2020-07-18T00:00:00") - new Date();
+  const difference = new Date("2020-07-07T00:00:00") - new Date();
   let timeLeft = "";
   if (difference > 0) {
     timeLeft += Math.floor(difference / (1000 * 60 * 60 * 24)) + "d : ";
