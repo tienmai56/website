@@ -188,7 +188,7 @@ const staffsMap = {
     },
     {
       name: "Nguyễn Huyền My",
-      image: "",
+      image: "HN/PM_Nguyen_Huyen_My.jpg",
       content: "Founder"
     },
   ],
@@ -237,7 +237,7 @@ const staffsMap = {
     },
     {
       name: "Vũ Quang Huy",
-      image: "",
+      image: "HN/Tech_Vu_Quang_Huy.jpg",
       content: "Hà Nội"
     },
     {

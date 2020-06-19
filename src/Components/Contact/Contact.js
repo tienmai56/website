@@ -186,7 +186,7 @@ const contactMap = [
   {
     name: "MS. NGUYỄN HUYỀN MY",
     email: "huyenmy.shecodes@gmail.com",
-    image: ""
+    image: "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/staffs/HN/PM_Nguyen_Huyen_My.jpg"
   }
 ]
 

@@ -1315,13 +1315,13 @@ const Hackathon = (props) => {
           </StatisticsColumn>
           <StatisticsColumn hidden={agenda !== '1'} style={{float: "none", margin: 0}}>
             <AgendaItemBox>
-              <AgendaItemHeader>{'>'} 25 THÁNG 7 NĂM 2020 (THỨ BẢY)</AgendaItemHeader>
+              <AgendaItemHeader>{'>'} 18 THÁNG 7 NĂM 2020 (THỨ BẢY)</AgendaItemHeader>
               <AgendaTimelineBox>
                 {generateAgendaComponentMap(HCMAgendaFirstDayMap)}
               </AgendaTimelineBox>
             </AgendaItemBox>
             <AgendaItemDownBox>
-              <AgendaItemHeader>{'>'} 26 THÁNG 7 NĂM 2020 (CHỦ NHẬT)</AgendaItemHeader>
+              <AgendaItemHeader>{'>'} 19 THÁNG 7 NĂM 2020 (CHỦ NHẬT)</AgendaItemHeader>
               <AgendaTimelineBox>
                 {generateAgendaComponentMap(HCMAgendaSecondDayMap)}
               </AgendaTimelineBox>
