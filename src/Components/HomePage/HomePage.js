@@ -2,6 +2,9 @@ import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+import { Card } from '../Common/Card';
+import { FlexBox } from '../Common/Flex';
+
 const HomePageBox = styled.div`
   margin: auto;
   margin-top: 6rem;
@@ -504,7 +507,8 @@ const featuresTechMarathonText = 'Chuỗi các lớp học "crash course" trong 
 const featuresHackathonText = 'Cuộc thi lập trình dành riêng cho phái nữ đầu tiên tại Việt Nam dành cho cả coder và non-coder, bao gồm không gian hack truyền thống cũng như hội thảo & thảo luận với các diễn giả. Sau 3 năm tổ chức, SheCodes Hackathon đã thu hút hơn 6000 người quan tâm, hơn 300 đội thi và hơn 40 ý tưởng khởi nghiệp được ấp ủ.';
 const featuresITFairText = 'Năm 2020, SheCodes Vietnam cùng VOCF đồng tổ chức chương trình Tech Online Career Fair 2020 nhằm hỗ trợ trang bị kỹ năng nghề nghiệp và tìm kiếm cơ hội việc làm trong ngành IT cho các bạn sinh viên trong mùa dịch COVID-19. Tham gia Tech Fair, người tham gia sẽ có cơ hội kết nối với những người đi trước, từ đó có thể học hỏi và phát triển bản thân trong sự nghiệp. Với 02 webinar hướng về support các bạn nữ get jobs thành công với chủ đề  “Coding Oversea - Từ Việt Nam vươn ra Thế giới” và webinar “Women Leaders In Tech" Shecodes và các diễn giả đã truyền cảm hứng, mang đến những kiến thức và trải nghiệm vô cùng bổ ích cho hơn 400 bạn trẻ đăng ký tham dự.';
 const featuresTechTalkText = 'Tech Talk là các talkshow dành cho các bạn trẻ có niềm yêu thích về IT, nơi các bạn có thể chia sẻ về các chủ đề mang tính thời sự trong ngành, qua đó có cơ hội được đặt câu hỏi cũng như networking với chuyên gia. Những chương trình tech talk của SheCodes như: “Breaking into Product Management”, “Phụ nữ thời đại 4.0: Thách thức hay cơ hội”, “Girls in data science” luôn thu hút số lượng lớn người tham dự trực tiếp.';
-const quoteInfoMap = [
+
+const quotes = [
   {
     image: "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/staffs/HN/Director_Mai_Phuong_Thuy_Tien.jpg",
     quote: "Khi các bên đối tác hỏi SheCodes rằng liệu có đủ phái nữ thích công nghệ để mà thực hiện chương trình không thì câu trả lời sẽ luôn là có. Luôn có một nguồn nhân lực nữ đam mê tự học về IT, say sưa với từng dòng code, nhưng đơn giản là họ chưa tìm thấy đất dụng võ cho mình. SheCodes sẽ tạo ra một network để nữ giới phá bỏ các rào cản cá nhân và xã hội để can trường dấn thân vào lĩnh vực công nghệ này.",
@@ -521,6 +525,24 @@ const quoteInfoMap = [
     footer: "Nguyễn Vũ Ngân Hà (Head of Tech Marathon) - Hà Nội",
   }
 ];
+const statistics = [
+  {
+    number: "20+",
+    description: "Sự kiện"
+  },
+  {
+    number: "2000+",
+    description: "Người tham gia sự kiện",
+  },
+  {
+    number: "45+",
+    description: "Diễn giả và các đối tác công ty công nghệ hàng đầu",
+  },
+  {
+    number: "6000+",
+    description: "Người theo dõi các hoạt động, chương trình của Shecodes Việt Nam"
+  }
+]
 
 const HomePage = (props) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -548,23 +570,29 @@ const HomePage = (props) => {
         <AboutText>{aboutTextStr}</AboutText>
       </AboutBox>
       <QuoteBox>
-        <QuoteRow>
+          <FlexBox>
           {
-            quoteInfoMap.map((value, index) => (
-              <QuoteColumn className="col-1-of-3" key={index}>
-                <QuoteCardBox>
-                  <QuoteCardImageBox>
-                    <QuoteCardImage src={value.image} alt={value.footer}/>
-                  </QuoteCardImageBox>
-                  <QuoteTextBox>
-                    <QuoteText>{value.quote}</QuoteText>
-                    <QuoteFooter>- {value.footer}</QuoteFooter>
-                  </QuoteTextBox>
-                </QuoteCardBox>
-              </QuoteColumn>
+            quotes.map((value, index) => (
+              <Card 
+                key={"quote_homepage_" + index}
+                width={`${100/quotes.length}%`}
+                margin="0 1.5%"
+                padding="2rem"
+                smallDirection="column"
+                smallWidth={`${80}%`}
+                smallMargin="auto"
+              >
+                <QuoteCardImageBox>
+                  <QuoteCardImage src={value.image} alt={value.footer}/>
+                </QuoteCardImageBox>
+                <QuoteTextBox>
+                  <QuoteText>{value.quote}</QuoteText>
+                  <QuoteFooter>- {value.footer}</QuoteFooter>
+                </QuoteTextBox>
+              </Card>
             ))
           }
-        </QuoteRow>
+          </FlexBox>
       </QuoteBox>
       <FeaturesBox>
         <FeaturesHeader>ĐIỂM NỔI BẬT</FeaturesHeader>
