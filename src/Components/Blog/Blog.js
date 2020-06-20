@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 import { Card } from '../Common/Card';
-import { FlexBox } from '../Common/Flex';
+import { FlexBox } from '../Common/Box';
 
 const BlogBox = styled.div`
   margin-top: 6rem;
@@ -16,7 +16,6 @@ const BlogImage = styled.img`
   display: block;
   max-width: 100%;
   box-sizing: border-box;
-  margin: auto;
   @media only screen and (max-width: 56.25em) {
     margin-left: 0;
     margin-right: 1rem;
@@ -48,16 +47,19 @@ const Blog = (props) => {
   }, []);
   return (
     <BlogBox>
-      <FlexBox wrap>
+      <FlexBox wrap="wrap" smallDirection="row" margin="auto" maxWidth addition="justify-content: center;">
         {
           articles.map((article, index) => (
             <Card
+              direction="column"
+              smallDirection="row"
               href={article.link} 
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
               width="30rem"
               key={"card_" + index} 
               margin={"0.5rem"}
+              padding={"1rem"}
               smallHeight={"13rem"}
               smallWidth={"30rem"}
               hover

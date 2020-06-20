@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { FlexItem } from './Flex';
+import { FlexBox } from './Box';
 
-const Card = styled(FlexItem)`
+const Card = styled(FlexBox)`
   background-color: #000;
 	border-radius: 3px;
 	border: 1px solid;
