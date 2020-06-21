@@ -218,6 +218,11 @@ const Footer = (props) => {
                 </LinkItem>
               </FooterItem>
               <FooterItem>
+                <LinkItem as="a" href="https://www.instagram.com/Shecodes.vietnam" target="_blank">
+                  <MediaItem className="fab fa-instagram" />
+                </LinkItem>
+              </FooterItem>
+              <FooterItem>
                 <LinkItem as="a" href="https://www.linkedin.com/company/shecodeshackathon/" target="_blank">
                   <MediaItem className="fab fa-linkedin" />
                 </LinkItem>

@@ -1276,6 +1276,7 @@ const Hackathon = (props) => {
               width={`${100/3}%`}
               padding="2.5%"
               smallWidth="85%"
+              smallMargin="0 auto"
               key={"speaker_" + index}
             >
               <Card
