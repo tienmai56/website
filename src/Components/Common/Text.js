@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Box } from './Box';
 
 const Text = styled(Box)`
@@ -13,15 +13,37 @@ const Text = styled(Box)`
   display: ${props => (props.display ? props.display : "initial")};
 `;
 
-const ColorfulText = styled(Text)`
+const colorful = css`
   background-image: linear-gradient(to right, #e80872, #592368);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 `;
 
-const NormalText = styled(Text)`
+const normal = css`
   color: #f0f0f0;
 `;
 
-export { NormalText, ColorfulText }
+const ColorfulText = styled(Text)`
+  ${colorful}
+`;
+
+const NormalText = styled(Text)`
+  ${normal}
+`;
+
+const AnimationLink = styled(Text)`
+  ${ props => props.$colorful ? `${colorful}` : `${normal}`}
+  transition: all 0.4s;
+  display: inline;
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+    ${ props => props.$colorful ? `${colorful}` : `${normal}`}
+    border-bottom: 1px solid ${ props => props.$colorful ? `#e80872` : `#f0f0f0`};
+  }
+  &:hover::after, &:active::after, &:focus::after {
+    content: ' →'; 
+  }
+`;
+
+export { NormalText, ColorfulText, AnimationLink }

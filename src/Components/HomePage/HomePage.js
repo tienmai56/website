@@ -4,48 +4,9 @@ import { Link } from 'react-router-dom';
 
 import { Card } from '../Common/Card';
 import { FlexBox, Box } from '../Common/Box';
-import { ColorfulText, NormalText } from '../Common/Text';
+import { ColorfulText, NormalText, AnimationLink } from '../Common/Text';
 
-const HeaderText = styled.h1`
-  font-size: 7rem;
-  line-height: 1.7;
-  color: #fbfeff;
-  line-height: 10rem;
-  display: block;
-  margin: 0;
-  padding: 0;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center !important;
-  box-sizing: border-box;
-  @media only screen and (max-width: 75em) {
-      font-size: 6rem; }
-  @media only screen and (max-width: 56.25em) {
-      line-height: 7rem;
-      margin-bottom: 1rem; }
-  @media only screen and (max-width: 37.5em) {
-      font-size: 5rem;
-      line-height: 6rem; }
-  @media only screen and (max-width: 25em) {
-      font-size: 4rem;
-      line-height: 6rem; }
-`;
-
-const CountDownHeader = styled(HeaderText)`
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  font-weight:400;
-  @media only screen and (max-width: 75em) {
-      font-size: 5rem; }
-  @media only screen and (max-width: 56.25em) {
-      font-size: 4rem; }
-  @media only screen and (max-width: 37.5em) {
-      font-size: 3rem; }
-  @media only screen and (max-width: 25em) {
-      font-size: 2rem; }
-`;
-
-const calculateTimeLeft = () => {
+const timer = () => {
   const difference = new Date("2020-07-07T00:00:00") - new Date();
   let timeLeft = "";
   if (difference > 0) {
@@ -110,40 +71,6 @@ const RegistrationButton = styled.a`
   }
 `;
 
-const FeaturesLink = styled(Link)`
-  text-decoration: none;
-  font-size: 1.6rem;
-  background-image: linear-gradient(to right, #e80872, #592368);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: all 0.4s;
-  display: inline-block;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  float: left;
-  &:hover, &:active, &:focus {
-    text-decoration: none;
-    font-size: 1.6rem;
-    background-image: linear-gradient(to right, #e80872, #592368);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition: all 0.4s;
-    display: inline-block;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
-    line-height: 1.7;
-    float: left;
-    border-bottom: 1px solid #e80872; 
-  }
-  &:hover::after, &:active::after, &:focus::after {
-    content: ' →'; 
-  }
-  margin-top: 3rem;
-`;
-
 const about = "SheCodes Vietnam là một tổ chức phi lợi nhuận, nhằm khuyến khích phái nữ tham gia vào lĩnh vực Công nghệ thông tin, qua đó dần dần xóa bỏ khoảng cách giới tính trong lĩnh vực này. Năm 2018, Shecodes Vietnam được triển khai lần đầu tiên tại TP Hà Nội, Việt Nam với sự kiện tiên phong mang tên Shecodes Hackathon cùng sự tham gia của hơn 200 bạn nữ CNTT. Hiện nay, Shecodes đã mở rộng các chương trình hoạt động tại cả thành phố Hà Nội và Hồ Chí Minh, thu hút hơn 6000 bạn trẻ quan tâm trên khắp cả nước.";
 const features = [
   {
@@ -206,13 +133,13 @@ const statistics = [
 ]
 
 const HomePage = (props) => {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [time, setTime] = useState(timer());
   useEffect(() => 
     {
-      let countdownTimer = setTimeout(() => {
-        setTimeLeft(calculateTimeLeft());
+      let countdown = setTimeout(() => {
+        setTime(timer());
       }, 1000);
-      return (() => {clearTimeout(countdownTimer);});
+      return (() => {clearTimeout(countdown);});
     }
   );
   return (
@@ -243,8 +170,57 @@ const HomePage = (props) => {
             }
           "
         >
-          <HeaderText>SheCodes Hackathon 2020</HeaderText>
-          <CountDownHeader as="span">{timeLeft}</CountDownHeader>
+          <NormalText
+            fontSize="7rem"
+            lineHeight="10rem"
+            fontWeight="700"
+            textAlign="center"
+            display="block"
+            padding="0 1%"
+            addition="
+              font-family: 'Courier New', Courier, monospace !important;
+              @media only screen and (max-width: 75em) {
+                font-size: 6rem; 
+              }
+              @media only screen and (max-width: 56.25em) {
+                line-height: 7rem;
+                margin-bottom: 1rem; 
+              }
+              @media only screen and (max-width: 37.5em) {
+                font-size: 5rem;
+                line-height: 6rem; 
+              }
+              @media only screen and (max-width: 25em) {
+                font-size: 4rem;
+                line-height: 6rem; 
+              }"
+          >
+            SheCodes Hackathon 2020
+          </NormalText>
+          <NormalText
+            display="block"
+            textAlign="center"
+            fontSize="7rem"
+            lineHeight="10rem"
+            addition="
+              font-family: 'Courier New', Courier, monospace !important;
+              white-space: nowrap;
+              @media only screen and (max-width: 75em) {
+                font-size: 5rem; 
+              }
+              @media only screen and (max-width: 56.25em) {
+                font-size: 4rem; 
+              }
+              @media only screen and (max-width: 37.5em) {
+                font-size: 3rem; 
+              }
+              @media only screen and (max-width: 25em) {
+                font-size: 2rem; 
+              }
+            "
+          >
+            {time}
+          </NormalText>
         </Box>
         <RegistrationBox>
           <RegistrationButton href="https://docs.google.com/forms/d/e/1FAIpQLSfSLJ8l2dbgT1aM_IgFe-ja3DWZG0KKSOBRlWQslaMNkQKmAA/viewform" target="_blank">Đăng ký tham gia</RegistrationButton>
@@ -398,7 +374,19 @@ const HomePage = (props) => {
                   >
                     {value.description}
                   </NormalText>
-                  {value.link ? (<FeaturesLink to={value.link}>Đọc thêm</FeaturesLink>) : null}
+                  {value.link ? (
+                    <AnimationLink
+                      $colorful
+                      as={Link}
+                      to={value.link}
+                      lineHeight="1.7"
+                      fontSize="1.6rem"
+                      margin="3rem 0 0 0"
+                      addition="float:left;"
+                    >
+                      Đọc thêm
+                    </AnimationLink>
+                  ) : null}
                 </Box>
               );
             })
