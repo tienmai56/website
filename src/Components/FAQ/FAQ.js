@@ -42,17 +42,7 @@ const FAQMap = [
         "href": "https://www.facebook.com/groups/shecodes.hackathon/",
         "insideText": "Hackathon",
       },
-      ".",
-      {
-        "as": "br",
-      },
-      "Để đảm bảo an toàn cho người tham dự, SheCodes tạm dừng mọi hoạt động offline và chuyển các sự kiện sang online. Bạn hãy theo dõi ",
-      {
-        "as": "a",
-        "href": "https://www.facebook.com/shecodesvietnam/",
-        "insideText": "fanpage",
-      },
-      " để không bỏ lỡ cơ hội nào nhé."
+      "."
     ]
   },
 ];
