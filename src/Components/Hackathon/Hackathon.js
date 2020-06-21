@@ -1,8 +1,12 @@
 import React, {useState } from 'react';
 import styled from 'styled-components';
 
+import { FlexBox, Box } from '../Common/Box';
+import { ColorfulText, NormalText } from '../Common/Text';
+
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import { Card } from '../Common/Card';
 
 const githubRawAsserts = "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/";
 
@@ -91,14 +95,6 @@ const HeaderHackathon = styled.h1`
   }
 `;
 
-const StatisticsBox = styled.article`
-  display: block;
-  box-sizing: border-box;
-  background-color: #000;
-  padding-top: 15rem;
-  padding-bottom: 15rem;
-`;
-
 const StatisticsRow = styled.div`
   max-width: 114rem;
   margin: 0 auto;
@@ -166,59 +162,6 @@ const StatisticsRow = styled.div`
   }
 `;
 
-const StatisticsHeader = styled.h2`
-  text-align: center !important;
-  padding: 0;
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 4rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  background-image: linear-gradient(to right, #e80872, #592368);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-  letter-spacing: 0.2rem;
-  transition: all 0.2s;
-  box-sizing: border-box;
-  line-height: 1.7;
-`;
-
-const NumberBox = styled.div`
-  font-size: 2rem;
-  text-align: center !important;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #f0f0f0;
-  margin: 0;
-  padding: 0;
-`;
-
-const NumberStatistics = styled.div`
-  font-size: 8rem;
-  font-weight: 700;
-  display: block;
-  text-align: center !important;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.7;
-  color: #f0f0f0;
-  margin: 0;
-  padding: 0;
-`;
-
-const TitleStatistics = styled.p`
-  margin: 0;
-  padding: 0;
-  font-size: 2rem;
-  text-align: center !important;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #f0f0f0;
-`;
-
 const StatisticsColumn = styled.div`
   margin: 0;
   float: left;
@@ -236,59 +179,6 @@ const StatisticsColumn = styled.div`
   @media only screen and (max-width: 56.25em) {
     width: 100% !important;
   }
-`;
-
-const PurposeBox = styled.article`
-  background-image: linear-gradient(to right, rgba(22, 22, 22, 0.8), rgba(0, 0, 0, 0.8)), url('https://vuhuycto.github.io/shecodesdemo/assets/hackathon-mixed.png');
-  background-size: cover;
-  background-position: top;
-  padding-top: 15rem;
-  padding-bottom: 10rem;
-`;
-
-const PurposeRow = styled(StatisticsRow)`
-  opacity: 0.7;
-`;
-
-const PurposeColumn = styled(StatisticsColumn)`
-`;
-
-const PurposeCard = styled.div`
-  margin: 0;
-  padding: 0;
-  background-color: #000;
-  border-radius: 3px;
-  border: 1px solid;
-  border-image-slice: 1;
-  border-width: 1px;
-  border-image-source: linear-gradient(to left, #e80872, #592368);
-  padding: 2rem;
-  box-sizing: border-box;
-`;
-
-const PurposeItemHeader = styled.h3`
-  font-size: 2.4rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #fbfeff;
-  margin-bottom: 1.5rem !important;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.7;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-`;
-
-const PurposeItemIcon = styled.i`
-  display: inline-block;
-  margin-right: 1rem;
-  font-size: 2.4rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #fbfeff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.7;
 `;
 
 const PurposeParagraph = styled.p`
@@ -348,18 +238,6 @@ const EvaluationBox = styled.div`
   padding-top: 15rem;
 	background-color: #000;
 	padding-bottom: 15rem;
-`;
-
-const EvaluationUpRow = styled(StatisticsRow)`
-  padding-bottom: 0.2rem !important;
-  margin-bottom: 4rem !important;
-	@media only screen and (max-width: 56.25em) {
-		margin-bottom: 3rem !important;
-	}
-`;
-
-const EvaluationDownRow = styled(StatisticsRow)`
-  padding-bottom: 0.2rem !important;
 `;
 
 const EvaluationIcon = styled.i`
@@ -826,143 +704,11 @@ const GSHeaderIntro = styled.h3`
   line-height: 1.7;
 `;
 
-const GSMap = [
-  [
-    {
-      name: "Madam Lien",
-      title: "CEO LIAN, Investor Shark Tank Vietnam",
-      image: "https://vuhuycto.github.io/shecodesdemo/assets/madam-lien.jpg",
-    },
-    {
-      name: "Mr. Tran Vu Anh",
-      title: "CTO Logivan",
-      image: "https://vuhuycto.github.io/shecodesdemo/assets/tran-vu-anh.jpg",
-    },
-    {
-      name: "Mr. Ly Quang Huy",
-      title: "CTO Iot Gaming Vietnam",
-      image: "https://vuhuycto.github.io/shecodesdemo/assets/ly-quang-huy.jpg",
-    },
-  ],
-  [
-    {
-      name: "Ms. Jennie Hoang Phuong",
-      title: "CMO INTEK",
-      image: "https://vuhuycto.github.io/shecodesdemo/assets/jennie-hoang-phuong.jpg"
-    },
-    {
-      name: "Ms. Elisha Tan",
-      title: "PM Facebook APAC - Founder TechLadies",
-      image: "https://vuhuycto.github.io/shecodesdemo/assets/elisha-tan.jpg"
-    },
-    {
-      name: "Mr. Nguyen Sieu Dang",
-      title: "Training director Master in IOT program FPT International Education",
-      image: "https://vuhuycto.github.io/shecodesdemo/assets/nguye-sieu-dang.jpg",
-    },
-  ],
-  [
-    {
-      name: "Ms. Nguyen Thuy An",
-      title: "Teacher at Facebook Developer Circles Innovation Challenge",
-      image: "https://vuhuycto.github.io/shecodesdemo/assets/nguye-thuy-an.jpg"
-    },
-  ]
-];
-
-const generateGSComponentMap = (GSMap) => {
-  let GSComponentMap = [];
-  for (let i = 0; i < GSMap.length; i++) {
-    const items = GSMap[i];
-    let GSItemMap = [];
-    for (let j = 0; j < items.length; j++) {
-      const item = items[j];
-      GSItemMap.push(
-        <StatisticsColumn className="col-1-of-3" key={"gs_item" + i + j}>
-          <PurposeCard >
-            <GSCardImageBox>
-              <GSCardImage src={item.image} alt={item.name}/>
-            </GSCardImageBox>
-            <GSTextBox>
-              <GSHeaderIntro>{item.name}</GSHeaderIntro>
-              <GSText>{item.title}</GSText>
-            </GSTextBox>
-          </PurposeCard>
-        </StatisticsColumn>
-      )
-    }
-    GSComponentMap.push(
-      <StatisticsRow key={"gs_row" + i}>
-        {GSItemMap}
-      </StatisticsRow>
-    );
-  }
-  return GSComponentMap;
-};
-
 const PartnerBox = styled.div`
   background-color: #000;
 	padding-top: 10rem;
 	padding-bottom: 10rem;
 `;
-
-const PartnershipMap = {
-  "Nhà Tài Trợ Kim Cương": ["https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg", githubRawAsserts + "sponsors/OSAM.png"],
-  "Nhà Tài Trợ Vàng": ["https://vuhuycto.github.io/shecodesdemo/assets/globalcare-logo.jpg", "https://vuhuycto.github.io/shecodesdemo/assets/openm-logo.jpg"],
-  "Nhà Tài Trợ Bạc": ["https://vuhuycto.github.io/shecodesdemo/assets/sutunam-logo.jpg", "https://vuhuycto.github.io/shecodesdemo/assets/logo-ebiv-.jpg", "https://vuhuycto.github.io/shecodesdemo/assets/colorme-logo.jpg"],
-  "Đối tác": [
-    "https://vuhuycto.github.io/shecodesdemo/assets/Shopee-logo.jpg", 
-    "https://vuhuycto.github.io/shecodesdemo/assets/cinnamon-ai-labs-logo.jpg",
-    "https://vuhuycto.github.io/shecodesdemo/assets/coworking-space-logo.jpg",
-    "https://vuhuycto.github.io/shecodesdemo/assets/logo-Summit-01-1024x292.jpg",
-  ]
-}
-
-const generatePartnershipComponentMap = (partnershipMap) => {
-  let partnershipComponent = [];
-  for (const key in partnershipMap) {
-    if (partnershipMap.hasOwnProperty(key)) {
-      const item = partnershipMap[key];
-      let partnershipItem = [];
-      for (let i = 0; i < item.length; i++) {
-        const element = item[i];
-        let stylePartnership = {width: "80%"};
-        if(window.outerWidth >= 1024) {
-          if(item.length === 1) {
-            stylePartnership["width"] = "30%";
-          }
-          if(item.length === 2) {
-            stylePartnership["width"] = "50%";
-            if(i === 0) stylePartnership["float"] = "right";
-            if(i === 1) stylePartnership["float"] = "left";
-          }
-          else if(item.length === 3) {
-            stylePartnership["width"] = "70%";
-            if(i === 0) stylePartnership["float"] = "right";
-            if(i === 2) stylePartnership["float"] = "left";
-          }
-          else if(item.length === 4) {
-            stylePartnership["width"] = "80%";
-          }
-        }
-        partnershipItem.push(
-          <StatisticsColumn className={"col-1-of-" + item.length} key={"partner_item" + i} >
-            <img src={element} alt={element} style={stylePartnership}/>
-          </StatisticsColumn>
-        )
-      }
-      partnershipComponent.push(
-        <StatisticsRow key={"partner_row" + key}>
-          <StatisticsRow>
-            <GSHeaderIntro>{key}</GSHeaderIntro>
-          </StatisticsRow>
-          {partnershipItem}
-        </StatisticsRow>
-      )
-    }
-  }
-  return partnershipComponent;
-}
 
 const FAQsBox = styled.div`
   background-color: #000;
@@ -1161,6 +907,142 @@ const SwitchAgendaButton = styled(ToggleButton)`
   }
 `;
 
+const statistics = [
+  {
+    number: "407",
+    description: "Người đăng ký",
+  },
+  {
+    number: "299",
+    description: "Người tham gia",
+  },
+  {
+    number: "16",
+    description: "Công ty",
+  },
+  {
+    number: "41",
+    description: "Cố vấn/hướng dẫn viên, khách mời",
+  }
+];
+const purposes = [
+  {
+    name: "TRANG BỊ KIẾN THỨC",
+    icon: "icon-basic-notebook-pen",
+    description: "Cung cấp kiến thức cơ bản đồng thời định hướng nghề nghiệp về những ngành nghề liên quan đến công nghệ thông tin, giúp người tham gia bước ra khỏi vùng an toàn của mình và khám phá tiềm năng của bản thân."
+  },
+  {
+    name: "TẠO SỰ CÔNG BẰNG",
+    icon: "icon-basic-female",
+    description: "Mang đến cơ hội để phái nữ, không kể có kinh nghiệm lập trình hay chưa, đều được học hỏi và phát triển qua đó tạo ra một xã hội công bằng giữa phái nam và phái nữ."
+  },
+  {
+    name: "NHẬN THỨC SỨC MẠNH CÔNG NGHỆ",
+    icon: "icon-basic-server2",
+    description: "Giúp phái nữ nhận thức được tầm quan trọng của công nghệ thông tin trong việc giải quyết những vấn đề xã hội và tạo nên ảnh hưởng tích cực tới cộng đồng."
+  }
+];
+const criteria = [
+  {
+    name: "Tính sáng tạo",
+    icon: "icon-basic-lightbulb"
+  },
+  {
+    name: "Tính hữu dụng & Thực tế",
+    icon: "icon-basic-accelerator"
+  },
+  {
+    name: "Giá trị kinh doanh và Chiến lược Marketing",
+    icon: "icon-basic-globe"
+  },
+  {
+    name: "Tính bền vững",
+    icon: "icon-basic-hammer"
+  },
+  {
+    name: "Tính công nghệ & Kỹ thuật",
+    icon: "icon-basic-laptop"
+  },
+  {
+    name: "Demo",
+    icon: "icon-basic-display"
+  },
+  {
+    name: "Dùng API nhà tài trợ",
+    icon: "icon-basic-cloud"
+  }
+];
+const speakers = [
+  {
+    name: "Madam Lien",
+    title: "CEO LIAN, Investor Shark Tank Vietnam",
+    image: "https://vuhuycto.github.io/shecodesdemo/assets/madam-lien.jpg",
+  },
+  {
+    name: "Mr. Tran Vu Anh",
+    title: "CTO Logivan",
+    image: "https://vuhuycto.github.io/shecodesdemo/assets/tran-vu-anh.jpg",
+  },
+  {
+    name: "Mr. Ly Quang Huy",
+    title: "CTO Iot Gaming Vietnam",
+    image: "https://vuhuycto.github.io/shecodesdemo/assets/ly-quang-huy.jpg",
+  },
+  {
+    name: "Ms. Jennie Hoang Phuong",
+    title: "CMO INTEK",
+    image: "https://vuhuycto.github.io/shecodesdemo/assets/jennie-hoang-phuong.jpg"
+  },
+  {
+    name: "Ms. Elisha Tan",
+    title: "PM Facebook APAC - Founder TechLadies",
+    image: "https://vuhuycto.github.io/shecodesdemo/assets/elisha-tan.jpg"
+  },
+  {
+    name: "Mr. Nguyen Sieu Dang",
+    title: "Training director Master in IOT program FPT International Education",
+    image: "https://vuhuycto.github.io/shecodesdemo/assets/nguye-sieu-dang.jpg",
+  },
+  {
+    name: "Ms. Nguyen Thuy An",
+    title: "Teacher at Facebook Developer Circles Innovation Challenge",
+    image: "https://vuhuycto.github.io/shecodesdemo/assets/nguye-thuy-an.jpg"
+  },
+];
+const sponsors = [
+  {
+    name: "Nhà Tài Trợ Kim Cương",
+    images: [
+      "https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg", 
+      githubRawAsserts + "sponsors/OSAM.png"
+    ]
+  },
+  {
+    name: "Nhà Tài Trợ Vàng",
+    images: [
+      "https://vuhuycto.github.io/shecodesdemo/assets/globalcare-logo.jpg", 
+      "https://vuhuycto.github.io/shecodesdemo/assets/openm-logo.jpg"
+    ],
+  },
+  {
+    name: "Nhà Tài Trợ Bạc",
+    images: [
+      "https://vuhuycto.github.io/shecodesdemo/assets/sutunam-logo.jpg", 
+      "https://vuhuycto.github.io/shecodesdemo/assets/logo-ebiv-.jpg", 
+      "https://vuhuycto.github.io/shecodesdemo/assets/colorme-logo.jpg"
+    ]
+  },
+  {
+    name: "Đối tác",
+    images: [
+      "https://vuhuycto.github.io/shecodesdemo/assets/Shopee-logo.jpg", 
+      "https://vuhuycto.github.io/shecodesdemo/assets/cinnamon-ai-labs-logo.jpg",
+      "https://vuhuycto.github.io/shecodesdemo/assets/coworking-space-logo.jpg",
+      "https://vuhuycto.github.io/shecodesdemo/assets/logo-Summit-01-1024x292.jpg",
+    ]
+  }
+]
+
 const Hackathon = (props) => {
   const [agenda, setAgenda] = useState('2');
   const agendaRadio = [
@@ -1177,105 +1059,149 @@ const Hackathon = (props) => {
         </VideoBox>
         <HeaderHackathon>SheCodes Hackathon 2020</HeaderHackathon>
       </HeaderBox>
-      <StatisticsBox>
-        <StatisticsRow>
-          <StatisticsHeader>ĐÁNH THỨC TIỀM NĂNG CÔNG NGHỆ</StatisticsHeader>
-        </StatisticsRow>
-        <StatisticsRow>
-          <StatisticsColumn className="col-1-of-4">
-            <NumberBox>
-              <NumberStatistics>407</NumberStatistics>
-              <TitleStatistics>Người đăng ký</TitleStatistics>
-            </NumberBox>
-          </StatisticsColumn>
-          <StatisticsColumn className="col-1-of-4">
-            <NumberBox>
-              <NumberStatistics>299</NumberStatistics>
-              <TitleStatistics>Người tham gia</TitleStatistics>
-            </NumberBox>
-          </StatisticsColumn>
-          <StatisticsColumn className="col-1-of-4">
-            <NumberBox>
-              <NumberStatistics>16</NumberStatistics>
-              <TitleStatistics>Công ty</TitleStatistics>
-            </NumberBox>
-          </StatisticsColumn>
-          <StatisticsColumn className="col-1-of-4">
-            <NumberBox>
-              <NumberStatistics>41</NumberStatistics>
-              <TitleStatistics>Cố vấn/hướng dẫn viên, khách mời</TitleStatistics>
-            </NumberBox>
-          </StatisticsColumn>
-        </StatisticsRow>
-      </StatisticsBox>
-      <PurposeBox>
-        <PurposeRow>
-          <PurposeColumn className="col-1-of-3">
-            <PurposeCard>
-              <PurposeItemHeader>
-                <PurposeItemIcon className="icon-basic-notebook-pen"></PurposeItemIcon>
-                TRANG BỊ KIẾN THỨC
-              </PurposeItemHeader>
-              <PurposeParagraph>Cung cấp kiến thức cơ bản đồng thời định hướng nghề nghiệp về những ngành nghề liên quan đến công nghệ thông tin, giúp người tham gia bước ra khỏi vùng an toàn của mình và khám phá tiềm năng của bản thân.</PurposeParagraph>
-            </PurposeCard>
-          </PurposeColumn>
-          <PurposeColumn className="col-1-of-3">
-            <PurposeCard>
-              <PurposeItemHeader>
-                <PurposeItemIcon className="icon-basic-female"></PurposeItemIcon>
-                TẠO SỰ CÔNG BẰNG
-              </PurposeItemHeader>
-              <PurposeParagraph>Mang đến cơ hội để phái nữ, không kể có kinh nghiệm lập trình hay chưa, đều được học hỏi và phát triển qua đó tạo ra một xã hội công bằng giữa phái nam và phái nữ.</PurposeParagraph>
-            </PurposeCard>
-          </PurposeColumn>
-          <PurposeColumn className="col-1-of-3">
-            <PurposeCard>
-              <PurposeItemHeader>
-                <PurposeItemIcon className="icon-basic-server2"></PurposeItemIcon>
-                NHẬN THỨC SỨC MẠNH CÔNG NGHỆ
-              </PurposeItemHeader>
-              <PurposeParagraph>Giúp phái nữ nhận thức được tầm quan trọng của công nghệ thông tin trong việc giải quyết những vấn đề xã hội và tạo nên ảnh hưởng tích cực tới cộng đồng.</PurposeParagraph>
-            </PurposeCard>
-          </PurposeColumn>
-        </PurposeRow>
+      <Box
+        as="article"
+        backgroundColor="#000"
+        padding="15rem 0 15rem 0"
+      >
+        <ColorfulText
+          as="h2"
+          textAlign="center"
+          fontSize="4rem"
+          fontWeight="700"
+          letterSpacing="0.2rem"
+          lineHeight="1.7"
+          width="90%"
+        >
+          ĐÁNH THỨC TIỀM NĂNG CÔNG NGHỆ
+        </ColorfulText>
+        <FlexBox margin="8rem auto 0 auto" smallMargin="6rem auto 0 auto" maxWidth addition="justify-content: center;" smallDirection="column">
+        {
+          statistics.map((value, index) => (
+            <FlexBox
+              width={`${100/statistics.length}%`}
+              key={"statistics_hompage_" + index}
+              margin="0 2%"
+              smallDirection="column"
+              direction="column"
+              addition="justify-content: center;"
+              smallWidth="100%"
+            >
+              <NormalText
+                as="p"
+                display="block"
+                margin="0 auto"
+                padding="0"
+                textAlign="center"
+                fontSize="8rem"
+                fontWeight="700"
+                letterSpacing="0.2rem"
+                lineHeight="1.7"
+              >
+                {value.number}
+              </NormalText>
+              <NormalText
+                as="p"
+                display="block"
+                margin="0 auto"
+                padding="0"
+                textAlign="center"
+                fontSize="2rem"
+                lineHeight="1.7"
+              >
+                {value.description}
+              </NormalText>
+            </FlexBox>
+          ))
+        }
+        </FlexBox>
+      </Box>
+      <Box
+        padding="15rem 0 10rem 0"
+        addition="
+          background-image: 
+            linear-gradient(to right, rgba(22, 22, 22, 0.8), rgba(0, 0, 0, 0.8)), 
+            url('https://vuhuycto.github.io/shecodesdemo/assets/hackathon-mixed.png');
+          background-size: cover;
+          background-position: top;
+        "
+      >
+        <FlexBox 
+          maxWidth
+          margin="0 auto 8rem auto" 
+          smallMargin="0 auto 6rem auto"
+        >
+          {
+            purposes.map((value, index) => (
+              <Card
+                margin="0 1%"
+                direction="column"
+                padding="2rem"
+                smallMargin="0 auto 6rem auto"
+                width={`${100/purposes.length}%`}
+                smallWidth={`${80}%`}
+                key={"purposes_" + index}
+              >
+                <NormalText
+                  as="div"
+                  margin="0 0 1.5rem 0"
+                  display="block"
+                  textAlign="left"
+                  fontSize="2.4rem"
+                  fontWeight="700"
+                  lineHeight="1.7"
+                >
+                  <NormalText
+                    className={value.icon}
+                    as="i"
+                    margin="0 1rem 0 0"
+                    fontSize="2.4rem"
+                    fontWeight="700"
+                    lineHeight="1.7"
+                  />
+                  {value.name}
+                </NormalText>
+                <NormalText
+                  as="p"
+                  display="block"
+                  textAlign="justify"
+                  fontSize="1.6rem"
+                  lineHeight="1.7"
+                >
+                  {value.description}
+                </NormalText>
+              </Card>
+            ))
+          }
+        </FlexBox>
         <RegistrationButton href="https://docs.google.com/forms/d/e/1FAIpQLSfSLJ8l2dbgT1aM_IgFe-ja3DWZG0KKSOBRlWQslaMNkQKmAA/viewform" target="_blank">Đăng ký tham gia</RegistrationButton>
-      </PurposeBox>
+      </Box>
       <EvaluationBox>
-        <StatisticsRow>
-          <StatisticsHeader>TIÊU CHÍ CHẤM ĐIỂM</StatisticsHeader>
-        </StatisticsRow>
-        <EvaluationUpRow>
-          <StatisticsColumn className="col-1-of-4">
-            <EvaluationIcon className="icon-basic-lightbulb"/>
-            <EvaluationParagraph>Tính sáng tạo</EvaluationParagraph>
-          </StatisticsColumn>
-          <StatisticsColumn className="col-1-of-4">
-            <EvaluationIcon className="icon-basic-accelerator"/>
-            <EvaluationParagraph>Tính hữu dụng & Thực tế</EvaluationParagraph>
-          </StatisticsColumn>
-          <StatisticsColumn className="col-1-of-4">
-            <EvaluationIcon className="icon-basic-globe"/>
-            <EvaluationParagraph>Giá trị kinh doanh và Chiến lược Marketing</EvaluationParagraph>
-          </StatisticsColumn>
-          <StatisticsColumn className="col-1-of-4">
-            <EvaluationIcon className="icon-basic-hammer"/>
-            <EvaluationParagraph>Tính bền vững</EvaluationParagraph>
-          </StatisticsColumn>
-        </EvaluationUpRow>
-        <EvaluationDownRow>
-          <StatisticsColumn className="col-1-of-4">
-            <EvaluationIcon className="icon-basic-laptop"/>
-            <EvaluationParagraph>Tính công nghệ {'&'} Kỹ thuật</EvaluationParagraph>
-          </StatisticsColumn>
-          <StatisticsColumn className="col-1-of-4">
-            <EvaluationIcon className="icon-basic-display"/>
-            <EvaluationParagraph>Demo</EvaluationParagraph>
-          </StatisticsColumn>
-          <StatisticsColumn className="col-1-of-4">
-            <EvaluationIcon className="icon-basic-cloud"/>
-            <EvaluationParagraph>Dùng API nhà tài trợ</EvaluationParagraph>
-          </StatisticsColumn>
-        </EvaluationDownRow>
+        <ColorfulText
+          as="h2"
+          textAlign="center"
+          fontSize="4rem"
+          fontWeight="700"
+          letterSpacing="0.2rem"
+          lineHeight="1.7"
+          width="90%"
+        >
+          TIÊU CHÍ CHẤM ĐIỂM
+        </ColorfulText>
+        <FlexBox maxWidth margin="8rem auto -4rem auto" smallMargin="6rem auto -4rem auto" wrap="wrap">
+          {criteria.map((value, index) => (
+            <Box
+              key={"criteria_"+index}
+              width={`${100/4}%`}
+              padding="0 1%"
+              margin="0 0 4rem 0"
+              smallWidth="100%"
+            >
+              <EvaluationIcon className={value.icon} />
+              <EvaluationParagraph>{value.name}</EvaluationParagraph>
+            </Box>
+          ))}
+        </FlexBox>
       </EvaluationBox>
       <AgendaBox>
         <StatisticsRow>
@@ -1330,16 +1256,102 @@ const Hackathon = (props) => {
         </AgendaRow>
       </AgendaBox>
       <GSBox>
-        <StatisticsRow>
-          <AgendaHeader>DANH SÁCH DIỄN GIẢ</AgendaHeader>
-        </StatisticsRow>
-        {generateGSComponentMap(GSMap)}
+        <NormalText
+          s="h2"
+          display="block"
+          margin="0 auto"
+          padding="0"
+          textAlign="center"
+          fontSize="4rem"
+          fontWeight="700"
+          letterSpacing="0.2rem"
+          lineHeight="1.7"
+          width="90%"
+        >
+          DANH SÁCH DIỄN GIẢ
+        </NormalText>
+        <FlexBox maxWidth wrap="wrap" margin="8rem auto 0" smallMargin="6rem auto 0" addition="align-content: space-around;">
+          {speakers.map((value, index) => (
+            <Box
+              width={`${100/3}%`}
+              padding="2.5%"
+              smallWidth="85%"
+              key={"speaker_" + index}
+            >
+              <Card
+                direction="column"
+                padding="2rem"
+                height="100%"
+              >
+                <GSCardImageBox>
+                  <GSCardImage src={value.image} alt={value.name}/>
+                </GSCardImageBox>
+                <GSTextBox>
+                  <GSHeaderIntro>{value.name}</GSHeaderIntro>
+                <GSText>{value.title}</GSText>
+                </GSTextBox>
+              </Card>
+            </Box>
+          ))}
+        </FlexBox>
       </GSBox>
       <PartnerBox>
-        <StatisticsRow>
-          <AgendaHeader>ĐỐI TÁC</AgendaHeader>
-        </StatisticsRow>
-        {generatePartnershipComponentMap(PartnershipMap)}
+        <NormalText
+          s="h2"
+          display="block"
+          margin="0 auto"
+          padding="0"
+          textAlign="center"
+          fontSize="4rem"
+          fontWeight="700"
+          letterSpacing="0.2rem"
+          lineHeight="1.7"
+          width="90%"
+        >
+          ĐỐI TÁC
+        </NormalText>
+        {
+          sponsors.map((value, index) => (
+            <Box
+              key={"sponsors_" + index}
+              margin="8rem auto 8rem auto"
+              smallMargin="6rem auto 6rem auto"
+            >
+              <NormalText
+                as="h3"
+                margin="0 0 1.5rem 0"
+                display="block"
+                textAlign="center"
+                fontSize="2.4rem"
+                lineHeight="1.7"
+              >
+                {value.name}
+              </NormalText>
+              <FlexBox
+                maxWidth
+                margin="auto"
+                addition="justify-content: center;"
+              >
+                {value.images.map((image, i) => (
+                  <Box 
+                    width={`${100/(value.images.length + 2)}%`}
+                    padding="1%"
+                    key={"sponsor_" + i}
+                    smallWidth="50%"
+                    smallMargin="0 auto"
+                  >
+                    <Box 
+                      as="img"
+                      src={image}
+                      alt={image}
+                      addition="max-width: 100%;"
+                    />
+                  </Box>
+                ))}
+              </FlexBox>
+            </Box>
+          ))
+        }
       </PartnerBox>
       <article>
         <img src="https://vuhuycto.github.io/shecodesdemo/assets/B%C3%A0i%20bung.gif" alt="inspiration" style={{display: "block", width: "100%"}}/>
