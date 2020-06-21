@@ -202,7 +202,6 @@ const Footer = (props) => {
       <Row>
         <div className="col-1-of-2">
           <InfoRow>
-            <FooterItem><LinkItem to="/staffs">Đội ngũ</LinkItem></FooterItem>
             <FooterItem><LinkItem to="/contact">Liên hệ</LinkItem></FooterItem>
             <FooterItem><LinkItem to="/about">Giới thiệu</LinkItem></FooterItem>
             <FooterItem><LinkItem to="/sponsors">Nhà tài trợ</LinkItem></FooterItem>

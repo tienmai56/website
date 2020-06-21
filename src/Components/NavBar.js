@@ -189,6 +189,7 @@ const NavBar = (props) => {
             <MenuItem><LinkItemActive to="/hackathon" onClick={() => setShow(false)} >Hackathon 2020</LinkItemActive></MenuItem>
             <MenuItem><LinkItemActive to="/tech-marathon" onClick={() => setShow(false)}>Tech Marathon</LinkItemActive></MenuItem>
             <MenuItem><LinkItemActive to="/event" onClick={() => setShow(false)}>Sự kiện khác</LinkItemActive></MenuItem>
+            <MenuItem><LinkItemActive to="/staffs" onClick={() => setShow(false)}>Đội ngũ</LinkItemActive></MenuItem>
             <MenuItem last><LinkItemActive to="/blog" onClick={() => setShow(false)}>Blog</LinkItemActive></MenuItem>
           </MenuList>
         </NavBox>
