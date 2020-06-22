@@ -280,6 +280,11 @@ const staffsMap = {
       content: "Hà Nội",
     },
     {
+      name: "Phạm Nguyễn Hằng Vân",
+      image: "HN/Marketing_Pham_Nguyen_Hang_Van.jpg",
+      content: "Hà Nội"
+    },
+    {
       name: "Huỳnh Nguyễn Ngân Thy",
       image: "HCM/Marketing_Huynh_Nguyen_Ngan_Thy.jpg",
       content: "Hồ Chí Minh"

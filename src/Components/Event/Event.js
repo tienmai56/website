@@ -19,7 +19,7 @@ const YearBox = styled.div`
   line-height: 1.75;
   font-size: 15px;
   background-color: #000;
-  height: 92vh;
+  height: calc(100vh - 6rem);
   flex-direction: row-reverse;
   @media only screen and (max-width: 56.25em) {
     height: 90vh;

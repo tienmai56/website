@@ -179,11 +179,6 @@ const contactMap = [
     image: "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/staffs/HN/Director_Mai_Phuong_Thuy_Tien.jpg",
   },
   {
-    name: "MS. TRẦN TUỆ NHI",
-    email: "nhitran.shecodes@gmail.com",
-    image: "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/staffs/HN/PM_Tran_Tue_Nhi.jpg"
-  },
-  {
     name: "MS. NGUYỄN HUYỀN MY",
     email: "huyenmy.shecodes@gmail.com",
     image: "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/staffs/HN/PM_Nguyen_Huyen_My.jpg"
@@ -199,7 +194,7 @@ const Contact = (props) => {
       <ContactRow>
         {
           contactMap.map((value, index) => (
-            <ContactColumn className="col-1-of-3" key={"contact_" + index}>
+            <ContactColumn className="col-1-of-2" key={"contact_" + index}>
               <ContactImageBox>
                 <ContactImage src={value.image} alt={value.name}/>
               </ContactImageBox>
