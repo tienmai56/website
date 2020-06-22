@@ -175,7 +175,7 @@ const StaffsName = styled.p`
   text-align: justify;
 `;
 
-const StaffsRole= styled(StaffsName)`
+const StaffsRole = styled(StaffsName)`
   font-size: 1.4rem;
 `;
 
@@ -280,6 +280,11 @@ const staffsMap = {
       content: "Hà Nội",
     },
     {
+      name: "Phạm Nguyễn Hằng Vân",
+      image: "HCM/Marketing_Pham_Nguyen_Hang_Van.jpg",
+      content: "Hà Nội"
+    },
+    {
       name: "Huỳnh Nguyễn Ngân Thy",
       image: "HCM/Marketing_Huynh_Nguyen_Ngan_Thy.jpg",
       content: "Hồ Chí Minh"
@@ -324,7 +329,7 @@ const generateStaffsComponent = (staffsMap) => {
           staffsRoleRowComponent.push(
             <StaffsColumn className="col-1-of-3" key={i + "_row_" + j}>
               <StaffsImageBox>
-                <StaffsImage alt={staff.name} src={"https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/staffs/" + staff.image}/>
+                <StaffsImage alt={staff.name} src={"https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/staffs/" + staff.image} />
               </StaffsImageBox>
               <StaffsName>{staff.name}</StaffsName>
               <StaffsRole>- {staff.content}</StaffsRole>
@@ -332,7 +337,7 @@ const generateStaffsComponent = (staffsMap) => {
           )
         }
         staffsRoleComponent.push(
-          <StaffsRow style={{border: 0}} key={i + "_role"}>
+          <StaffsRow style={{ border: 0 }} key={i + "_role"}>
             {staffsRoleRowComponent}
           </StaffsRow>
         );

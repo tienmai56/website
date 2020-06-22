@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { HashLink as Link } from 'react-router-hash-link';
@@ -19,7 +19,7 @@ const YearBox = styled.div`
   line-height: 1.75;
   font-size: 15px;
   background-color: #000;
-  height: 92vh;
+  height: 100vh;
   flex-direction: row-reverse;
   @media only screen and (max-width: 56.25em) {
     height: 90vh;
@@ -103,7 +103,7 @@ const YearImageBox = styled.div`
       transform: translate(0); 
     }
   }
-  width: ${props => (100/props.len)}%;
+  width: ${props => (100 / props.len)}%;
   padding: 0;
   margin: 0;
   height: 100%;
@@ -158,7 +158,7 @@ const YearImageBox = styled.div`
       ${props => (props.active ? "linear-gradient(to bottom, rgba(232, 8, 114, 0.6), rgba(89, 35, 104, 0.7))" : "linear-gradient(to right,rgba(22, 22, 22, 0.7), rgba(22, 22, 22, 0.7))")},
       url(${props => (githubRawAsserts + props.year + "/common/ava" + props.year + "-full.png")});
     width: 100%;
-    height: ${props => (props.active ? 80 : 100/props.len)}%;
+    height: ${props => (props.active ? 80 : 100 / props.len)}%;
     transition: all .5s ease;
     &:hover {
       width: 100%;
@@ -326,7 +326,7 @@ const YearItemMetadata = styled.h3`
   margin: 0px;
   text-align: right;
   align-self: center;
-  width: ${100/5}%;
+  width: ${100 / 5}%;
   padding-right: 5rem;
   @media only screen and (max-width: 56.25em) {
     order: ${props => props.order_reponsive};
@@ -346,7 +346,7 @@ const YearItemTitle = styled.h3`
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  width: ${4*100/5}%;
+  width: ${4 * 100 / 5}%;
   text-align: left;
   @media only screen and (max-width: 56.25em) {
     order: 1;
@@ -365,7 +365,7 @@ const YearItemContent = styled.p`
   font-weight: 400;
   color: #f0f0f0;
   padding-right: 5rem;
-  width: ${4*100/5}%;
+  width: ${4 * 100 / 5}%;
   @media only screen and (max-width: 56.25em) {
     padding: 0;
     width: 100%;
@@ -418,7 +418,7 @@ const YearsCover = (props) => {
   for (let i = 0; i < years.length; i++) {
     const year = years[i];
     yearsComponenent.push(
-      <YearImageBox key={year.year} year={year.year} len={years.length} active={yearActive === year.year} onClick={() => {setYearActive((yearActive === year.year ? 0 : year.year));}}>
+      <YearImageBox key={year.year} year={year.year} len={years.length} active={yearActive === year.year} onClick={() => { setYearActive((yearActive === year.year ? 0 : year.year)); }}>
         <YearNumber>{year.year}</YearNumber>
         <YearTitle>
           {year.title}
@@ -433,13 +433,13 @@ const YearsCover = (props) => {
       {yearsComponenent}
     </YearBox>
   );
-} 
+}
 
 const Event = (props) => {
   return (
     <EventBox>
       <YearsCover years={years} />
-      <YearsItems years={years}/>
+      <YearsItems years={years} />
     </EventBox>
   );
 }

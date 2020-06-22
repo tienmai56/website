@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 
@@ -197,7 +197,7 @@ const Footer = (props) => {
   return (
     <FooterBox>
       <FooterLogoBox>
-        <img src="https://shecodesvietnam.github.io/homepage-2020/assets/logo-2020.png" alt="SheCodes Logo"/>
+        <img src="https://shecodesvietnam.github.io/homepage-2020/assets/logo-2020.png" alt="SheCodes Logo" />
       </FooterLogoBox>
       <Row>
         <div className="col-1-of-2">
@@ -219,6 +219,11 @@ const Footer = (props) => {
                 </LinkItem>
               </FooterItem>
               <FooterItem>
+                <LinkItem as="a" href="https://www.instagram.com/shecodes.vietnam/" target="_blank">
+                  <MediaItem className="fab fa-instagram" />
+                </LinkItem>
+              </FooterItem>
+              <FooterItem>
                 <LinkItem as="a" href="https://www.linkedin.com/company/shecodeshackathon/" target="_blank">
                   <MediaItem className="fab fa-linkedin" />
                 </LinkItem>
@@ -227,7 +232,7 @@ const Footer = (props) => {
           </MediaBox>
         </div>
       </Row>
-      <CopyRight>Thiết kế và phát triển với <span role="img" style={{fontSize: "2rem"}} aria-label="heart">💖</span> bởi SheCodes Hà Nội</CopyRight>
+      <CopyRight>Thiết kế và phát triển với <span role="img" style={{ fontSize: "2rem" }} aria-label="heart">💖</span> bởi SheCodes Hà Nội</CopyRight>
     </FooterBox>
   );
 }
