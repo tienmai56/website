@@ -7,7 +7,9 @@ import { FlexBox, Box } from '../Common/Box';
 import { ColorfulText, NormalText, AnimationLink } from '../Common/Text';
 
 const timer = () => {
-  const difference = new Date("2020-07-07T00:00:00") - new Date();
+  const expired = new Date(2020, 6, 13, 0, 0, 0, 0);
+  const difference = expired - Date.now();
+  console.log(expired);
   let timeLeft = "";
   if (difference > 0) {
     timeLeft += Math.floor(difference / (1000 * 60 * 60 * 24)) + "d : ";
@@ -16,7 +18,7 @@ const timer = () => {
     timeLeft += Math.floor((difference / 1000) % 60) + "s ";
   }
   else {
-    timeLeft = "EXPIRED";
+    timeLeft = "Đơn đăng ký đợt 2 đã đóng !";
   }
   return timeLeft;
 };
@@ -206,16 +208,16 @@ const HomePage = (props) => {
               font-family: 'Courier New', Courier, monospace !important;
               white-space: nowrap;
               @media only screen and (max-width: 75em) {
-                font-size: 5rem; 
+                font-size: 5rem;
               }
               @media only screen and (max-width: 56.25em) {
-                font-size: 4rem; 
+                font-size: 4rem;
               }
               @media only screen and (max-width: 37.5em) {
-                font-size: 3rem; 
+                font-size: 2rem;
               }
               @media only screen and (max-width: 25em) {
-                font-size: 2rem; 
+                font-size: 1.5rem; 
               }
             "
           >

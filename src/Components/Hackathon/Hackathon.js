@@ -980,18 +980,13 @@ const speakers = [
   },
   {
     name: "Mr. Tran Vu Anh",
-    title: "CTO Logivan",
-    image: "https://vuhuycto.github.io/shecodesdemo/assets/tran-vu-anh.jpg",
+    title: "CTO Waves8",
+    image: "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/guest speaker/tran_vu_anh.jpg",
   },
   {
     name: "Mr. Ly Quang Huy",
     title: "CTO Iot Gaming Vietnam",
     image: "https://vuhuycto.github.io/shecodesdemo/assets/ly-quang-huy.jpg",
-  },
-  {
-    name: "Ms. Jennie Hoang Phuong",
-    title: "CMO INTEK",
-    image: "https://vuhuycto.github.io/shecodesdemo/assets/jennie-hoang-phuong.jpg"
   },
   {
     name: "Ms. Elisha Tan",
@@ -1009,7 +1004,7 @@ const speakers = [
     image: "https://vuhuycto.github.io/shecodesdemo/assets/nguye-thuy-an.jpg"
   },
 ];
-const sponsors = [
+const sponsors_hn = [
   {
     name: "Nhà Tài Trợ Kim Cương",
     images: [
@@ -1041,7 +1036,17 @@ const sponsors = [
       "https://vuhuycto.github.io/shecodesdemo/assets/logo-Summit-01-1024x292.jpg",
     ]
   }
-]
+];
+
+const sponsors_hcm = [
+  {
+    name: "Đồng tổ chức",
+    images: [
+      "https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg", 
+      githubRawAsserts + "sponsors/OSAM.png"
+    ]
+  }
+];
 
 const Hackathon = (props) => {
   const [agenda, setAgenda] = useState('2');
@@ -1227,13 +1232,13 @@ const Hackathon = (props) => {
           </StatisticsRow>
           <StatisticsColumn hidden={agenda !== '2'} style={{float: "none", margin: 0}}>
             <AgendaItemBox>
-              <AgendaItemHeader>{'>'} 18 THÁNG 7 NĂM 2020 (THỨ BẢY)</AgendaItemHeader>
+              <AgendaItemHeader>{'>'} 25 THÁNG 7 NĂM 2020 (THỨ BẢY)</AgendaItemHeader>
               <AgendaTimelineBox>
                 {generateAgendaComponentMap(HanoiAgendaFirstDayMap)}
               </AgendaTimelineBox>
             </AgendaItemBox>
             <AgendaItemDownBox>
-              <AgendaItemHeader>{'>'} 19 THÁNG 7 NĂM 2020 (CHỦ NHẬT)</AgendaItemHeader>
+              <AgendaItemHeader>{'>'} 26 THÁNG 7 NĂM 2020 (CHỦ NHẬT)</AgendaItemHeader>
               <AgendaTimelineBox>
                 {generateAgendaComponentMap(HanoiAgendaSecondDayMap)}
               </AgendaTimelineBox>
@@ -1309,10 +1314,68 @@ const Hackathon = (props) => {
           lineHeight="1.7"
           width="90%"
         >
-          ĐỐI TÁC
+          ĐỐI TÁC HÀ NỘI
         </NormalText>
         {
-          sponsors.map((value, index) => (
+          sponsors_hn.map((value, index) => (
+            <Box
+              key={"sponsors_" + index}
+              margin="8rem auto 8rem auto"
+              smallMargin="6rem auto 6rem auto"
+            >
+              <NormalText
+                as="h3"
+                margin="0 0 1.5rem 0"
+                display="block"
+                textAlign="center"
+                fontSize="2.4rem"
+                lineHeight="1.7"
+              >
+                {value.name}
+              </NormalText>
+              <FlexBox
+                maxWidth
+                margin="auto"
+                addition="justify-content: center;"
+              >
+                {value.images.map((image, i) => (
+                  <Box 
+                    width={`${100/(value.images.length + 2)}%`}
+                    padding="1%"
+                    key={"sponsor_" + i}
+                    smallWidth="50%"
+                    smallMargin="0 auto"
+                  >
+                    <Box 
+                      as="img"
+                      src={image}
+                      alt={image}
+                      addition="max-width: 100%;"
+                    />
+                  </Box>
+                ))}
+              </FlexBox>
+            </Box>
+          ))
+        }
+      </PartnerBox>
+      <PartnerBox>
+        <NormalText
+          s="h2"
+          display="block"
+          margin="0 auto"
+          padding="0"
+          textAlign="center"
+          fontSize="4rem"
+          fontWeight="700"
+          letterSpacing="0.2rem"
+          lineHeight="1.7"
+          width="90%"
+        >
+          ĐỐI TÁC HỒ CHÍ MINH
+        </NormalText>
+        {
+          sponsors_hn.map((value, index) => (
             <Box
               key={"sponsors_" + index}
               margin="8rem auto 8rem auto"
