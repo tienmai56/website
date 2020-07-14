@@ -710,6 +710,11 @@ const PartnerBox = styled.div`
 	padding-bottom: 10rem;
 `;
 
+const PartnerBoxHCM = styled.div`
+  background-color: #000;
+	padding-bottom: 10rem;
+`;
+
 const FAQsBox = styled.div`
   background-color: #000;
   padding-bottom: 5rem;
@@ -1042,8 +1047,37 @@ const sponsors_hcm = [
   {
     name: "Đồng tổ chức",
     images: [
-      "https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg", 
-      githubRawAsserts + "sponsors/OSAM.png"
+      githubRawAsserts + "/sponsors/hcm/vtc.png"
+    ]
+  },
+  {
+    name: "Nhà tài trợ kim cương",
+    images: [
+      githubRawAsserts + "/sponsors/hcm/lian.png"
+    ]
+  },
+  {
+    name: "Nhà tài trợ vàng",
+    images: [
+      githubRawAsserts + "/sponsors/hcm/topcv.png"
+    ]
+  },
+  {
+    name: "Đối tác chuyên môn",
+    images: [
+      githubRawAsserts + "/sponsors/hcm/tiki.png"
+    ]
+  },
+  {
+    name: "Bảo trợ truyền thông",
+    images: [
+      githubRawAsserts + "sponsors/hcm/ybox.png"
+    ]
+  },
+  {
+    name: "Đối  tác truyền thông",
+    images: [
+      githubRawAsserts + "sponsors/hcm/coc_sai_gon.jpg"
     ]
   }
 ];
@@ -1359,7 +1393,7 @@ const Hackathon = (props) => {
           ))
         }
       </PartnerBox>
-      <PartnerBox>
+      <PartnerBoxHCM>
         <NormalText
           s="h2"
           display="block"
@@ -1375,7 +1409,7 @@ const Hackathon = (props) => {
           ĐỐI TÁC HỒ CHÍ MINH
         </NormalText>
         {
-          sponsors_hn.map((value, index) => (
+          sponsors_hcm.map((value, index) => (
             <Box
               key={"sponsors_" + index}
               margin="8rem auto 8rem auto"
@@ -1398,7 +1432,7 @@ const Hackathon = (props) => {
               >
                 {value.images.map((image, i) => (
                   <Box 
-                    width={`${100/(value.images.length + 2)}%`}
+                    width={`${100/(value.images.length + index + 2)}%`}
                     padding="1%"
                     key={"sponsor_" + i}
                     smallWidth="50%"
@@ -1416,7 +1450,7 @@ const Hackathon = (props) => {
             </Box>
           ))
         }
-      </PartnerBox>
+      </PartnerBoxHCM>
       <article>
         <img src="https://vuhuycto.github.io/shecodesdemo/assets/B%C3%A0i%20bung.gif" alt="inspiration" style={{display: "block", width: "100%"}}/>
       </article>
