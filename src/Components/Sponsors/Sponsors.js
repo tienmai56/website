@@ -2,89 +2,94 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+import { FlexBox, Box } from '../Common/Box';
+import { NormalText } from '../Common/Text';
+
 const githubRawAsserts = "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/";
 
-const SponsorsRow = styled.div`
-  max-width: 114rem;
-  margin: 0 auto;
-  line-height: 1.7;
-  &:not(:last-child) {
-		margin-bottom: 8rem;
-		@media only screen and (max-width: 56.25em) {
-			margin-bottom: 6rem;
-		}
-  }
-  @media only screen and (max-width: 56.25em) {
-		max-width: 50rem;
-		padding: 0 3rem;
-  }
-  &::after {
-		content: '';
-		display: table;
-		clear: both;
-  }
-  [class^='col-'] {
-		float: left;
-		margin-bottom: 1rem;
-
-		&:not(:last-child) {
-			margin-right: 6rem;
-
-			@media only screen and (max-width: 56.25em) {
-				margin-right: 0;
-				margin-bottom: 6rem;
-			}
-		}
-
-		@media only screen and (max-width: 56.25em) {
-			width: 100% !important;
-		}
-  }
-  .col-1-of-2 {
-		width: calc((100% - 6rem) / 2);
-	}
-
-	.col-1-of-3 {
-		width: calc((100% - 2 * 6rem) / 3);
-	}
-
-	.col-2-of-3 {
-		width: calc(
-			2 * ((100% - 2 * 6rem) / 3) + 6rem
-		);
-	}
-
-	.col-1-of-4 {
-		width: calc((100% - 3 * 6rem) / 4);
-	}
-
-	.col-2-of-4 {
-		width: calc(
-			2 * ((100% - 3 * 6rem) / 4) + 6rem
-		);
-	}
-
-	.col-3-of-4 {
-		width: calc(
-			3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem
-		);
-  }
+const PartnerBox = styled.div`
+  background-color: #000;
+	padding-top: 10rem;
+	padding-bottom: 10rem;
 `;
 
-const SponsorsHeader = styled.h2`
-  font-size: 4rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #fbfeff;
-  display: inline-block;
-  letter-spacing: 0.2rem;
-  transition: all 0.2s; 
-  padding-top: 8rem !important;
-  @media only screen and (max-width: 56.25em) {
-    padding-top: 5rem !important; 
-  }
-  margin: 0;
+const PartnerBoxHCM = styled.div`
+  background-color: #000;
+	padding-bottom: 10rem;
 `;
+
+const sponsors_hn = [
+  {
+    name: "Nhà Tài Trợ Kim Cương",
+    images: [
+      "https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg", 
+      githubRawAsserts + "sponsors/OSAM.png"
+    ]
+  },
+  {
+    name: "Nhà Tài Trợ Vàng",
+    images: [
+      "https://vuhuycto.github.io/shecodesdemo/assets/globalcare-logo.jpg", 
+      "https://vuhuycto.github.io/shecodesdemo/assets/openm-logo.jpg"
+    ],
+  },
+  {
+    name: "Nhà Tài Trợ Bạc",
+    images: [
+      "https://vuhuycto.github.io/shecodesdemo/assets/sutunam-logo.jpg", 
+      "https://vuhuycto.github.io/shecodesdemo/assets/logo-ebiv-.jpg", 
+      "https://vuhuycto.github.io/shecodesdemo/assets/colorme-logo.jpg"
+    ]
+  },
+  {
+    name: "Đối tác",
+    images: [
+      "https://vuhuycto.github.io/shecodesdemo/assets/Shopee-logo.jpg", 
+      "https://vuhuycto.github.io/shecodesdemo/assets/cinnamon-ai-labs-logo.jpg",
+      "https://vuhuycto.github.io/shecodesdemo/assets/coworking-space-logo.jpg",
+      "https://vuhuycto.github.io/shecodesdemo/assets/logo-Summit-01-1024x292.jpg",
+    ]
+  }
+];
+
+const sponsors_hcm = [
+  {
+    name: "Đồng tổ chức",
+    images: [
+      githubRawAsserts + "/sponsors/hcm/vtc.png"
+    ]
+  },
+  {
+    name: "Nhà tài trợ kim cương",
+    images: [
+      githubRawAsserts + "/sponsors/hcm/lian.png"
+    ]
+  },
+  {
+    name: "Nhà tài trợ vàng",
+    images: [
+      githubRawAsserts + "/sponsors/hcm/topcv.png"
+    ]
+  },
+  {
+    name: "Đối tác chuyên môn",
+    images: [
+      githubRawAsserts + "/sponsors/hcm/tiki.png"
+    ]
+  },
+  {
+    name: "Bảo trợ truyền thông",
+    images: [
+      githubRawAsserts + "sponsors/hcm/ybox.png"
+    ]
+  },
+  {
+    name: "Đối  tác truyền thông",
+    images: [
+      githubRawAsserts + "sponsors/hcm/coc_sai_gon.jpg"
+    ]
+  }
+];
 
 const SponsorsBox = styled.div`
   margin: auto;
@@ -94,95 +99,6 @@ const SponsorsBox = styled.div`
   background-color: #000;
   padding-bottom: 5rem;
 `;
-
-const SponsorsMap = {
-  "Nhà Tài Trợ Kim Cương": ["https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg", githubRawAsserts + "sponsors/OSAM.png"],
-  "Nhà Tài Trợ Vàng": ["https://vuhuycto.github.io/shecodesdemo/assets/globalcare-logo.jpg", "https://vuhuycto.github.io/shecodesdemo/assets/openm-logo.jpg"],
-  "Nhà Tài Trợ Bạc": ["https://vuhuycto.github.io/shecodesdemo/assets/sutunam-logo.jpg", "https://vuhuycto.github.io/shecodesdemo/assets/logo-ebiv-.jpg", "https://vuhuycto.github.io/shecodesdemo/assets/colorme-logo.jpg"],
-  "Đối tác": [
-    "https://vuhuycto.github.io/shecodesdemo/assets/Shopee-logo.jpg", 
-    "https://vuhuycto.github.io/shecodesdemo/assets/cinnamon-ai-labs-logo.jpg",
-    "https://vuhuycto.github.io/shecodesdemo/assets/coworking-space-logo.jpg",
-    "https://vuhuycto.github.io/shecodesdemo/assets/logo-Summit-01-1024x292.jpg",
-  ]
-}
-
-const SponsorsName = styled.h3`
-  font-size: 2.4rem;
-  margin: 0;
-  padding: 0;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #fbfeff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.7;
-  text-align: center;
-`;
-
-const SponsorsColumn = styled.div`
-  margin: 0;
-  float: left;
-  margin-bottom: 1rem;
-
-  &:not(:last-child) {
-    margin-right: 6rem;
-
-    @media only screen and (max-width: 56.25em) {
-      margin-right: 0;
-      margin-bottom: 6rem;
-    }
-  }
-
-  @media only screen and (max-width: 56.25em) {
-    width: 100% !important;
-  }
-`;
-
-const generateSponsorsComponentMap = (partnershipMap) => {
-  let partnershipComponent = [];
-  for (const key in partnershipMap) {
-    if (partnershipMap.hasOwnProperty(key)) {
-      const item = partnershipMap[key];
-      let partnershipItem = [];
-      for (let i = 0; i < item.length; i++) {
-        const element = item[i];
-        let stylePartnership = {width: "80%"};
-        if(window.outerWidth >= 1024) {
-          if(item.length === 1) {
-            stylePartnership["width"] = "30%";
-          }
-          if(item.length === 2) {
-            stylePartnership["width"] = "50%";
-            if(i === 0) stylePartnership["float"] = "right";
-            if(i === 1) stylePartnership["float"] = "left";
-          }
-          else if(item.length === 3) {
-            stylePartnership["width"] = "70%";
-            if(i === 0) stylePartnership["float"] = "right";
-            if(i === 2) stylePartnership["float"] = "left";
-          }
-          else if(item.length === 4) {
-            stylePartnership["width"] = "80%";
-          }
-        }
-        partnershipItem.push(
-          <SponsorsColumn className={"col-1-of-" + item.length} key={"partner_item" + i} >
-            <img src={element} alt={element} style={stylePartnership}/>
-          </SponsorsColumn>
-        )
-      }
-      partnershipComponent.push(
-        <SponsorsRow key={"partner_row" + key}>
-          <SponsorsRow>
-            <SponsorsName>{key}</SponsorsName>
-          </SponsorsRow>
-          {partnershipItem}
-        </SponsorsRow>
-      )
-    }
-  }
-  return partnershipComponent;
-}
 
 const SponsorsThankyouBox = styled.div`
   width: 100%;
@@ -232,10 +148,122 @@ const Sponsors = (props) => {
           <SponsorsThankYouText>Shecodes Việt Nam chân thành cảm ơn sâu sắc các nhà tài trợ, các doanh nghiệp, tổ chức đã, đang và sẽ đồng hành cùng chúng tôi thực hiện giấc mơ trao quyền, khuyến khích phái nữ dấn thân vào lĩnh vực công nghệ, gia tăng nguồn nhân lực chất lượng, nhiệt huyết, đóng góp tích cực vào công cuộc chuyển đổi số hoá tại Việt Nam.</SponsorsThankYouText>
         </SponsorsThankYouTextBox>
       </SponsorsThankyouBox>
-      <SponsorsRow>
-        <SponsorsHeader>NHÀ TÀI TRỢ</SponsorsHeader>
-      </SponsorsRow>
-      {generateSponsorsComponentMap(SponsorsMap)}
+      <PartnerBox>
+        <NormalText
+          s="h2"
+          display="block"
+          margin="0 auto"
+          padding="0"
+          textAlign="center"
+          fontSize="4rem"
+          fontWeight="700"
+          letterSpacing="0.2rem"
+          lineHeight="1.7"
+          width="90%"
+        >
+          ĐỐI TÁC HÀ NỘI
+        </NormalText>
+        {
+          sponsors_hn.map((value, index) => (
+            <Box
+              key={"sponsors_" + index}
+              margin="8rem auto 8rem auto"
+              smallMargin="6rem auto 6rem auto"
+            >
+              <NormalText
+                as="h3"
+                margin="0 0 1.5rem 0"
+                display="block"
+                textAlign="center"
+                fontSize="2.4rem"
+                lineHeight="1.7"
+              >
+                {value.name}
+              </NormalText>
+              <FlexBox
+                maxWidth
+                margin="auto"
+                addition="justify-content: center;"
+              >
+                {value.images.map((image, i) => (
+                  <Box 
+                    width={`${100/(value.images.length + 2)}%`}
+                    padding="1%"
+                    key={"sponsor_" + i}
+                    smallWidth="50%"
+                    smallMargin="0 auto"
+                  >
+                    <Box 
+                      as="img"
+                      src={image}
+                      alt={image}
+                      addition="max-width: 100%;"
+                    />
+                  </Box>
+                ))}
+              </FlexBox>
+            </Box>
+          ))
+        }
+      </PartnerBox>
+      <PartnerBoxHCM>
+        <NormalText
+          s="h2"
+          display="block"
+          margin="0 auto"
+          padding="0"
+          textAlign="center"
+          fontSize="4rem"
+          fontWeight="700"
+          letterSpacing="0.2rem"
+          lineHeight="1.7"
+          width="90%"
+        >
+          ĐỐI TÁC HỒ CHÍ MINH
+        </NormalText>
+        {
+          sponsors_hcm.map((value, index) => (
+            <Box
+              key={"sponsors_" + index}
+              margin="8rem auto 8rem auto"
+              smallMargin="6rem auto 6rem auto"
+            >
+              <NormalText
+                as="h3"
+                margin="0 0 1.5rem 0"
+                display="block"
+                textAlign="center"
+                fontSize="2.4rem"
+                lineHeight="1.7"
+              >
+                {value.name}
+              </NormalText>
+              <FlexBox
+                maxWidth
+                margin="auto"
+                addition="justify-content: center;"
+              >
+                {value.images.map((image, i) => (
+                  <Box 
+                    width={`${100/(value.images.length + index + 2)}%`}
+                    padding="1%"
+                    key={"sponsor_" + i}
+                    smallWidth="50%"
+                    smallMargin="0 auto"
+                  >
+                    <Box 
+                      as="img"
+                      src={image}
+                      alt={image}
+                      addition="max-width: 100%;"
+                    />
+                  </Box>
+                ))}
+              </FlexBox>
+            </Box>
+          ))
+        }
+      </PartnerBoxHCM>
     </SponsorsBox>
   );
 }
