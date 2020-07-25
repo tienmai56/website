@@ -8,6 +8,8 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import { Card } from '../Common/Card';
 
+import { SponsorsList } from '../Sponsors/Sponsors';
+
 const githubRawAsserts = "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/";
 
 const HackathonBox = styled.div`
@@ -341,96 +343,109 @@ const AgendaItemRow = styled(StatisticsRow)`
 const HanoiAgendaFirstDayMap = [
   {
     start: "09:00",
-    end: "10:00",
-    content: ["Hackers check-in"],
+    end: "10:15",
+    content: [
+      "Hackers check-in",
+      "Network cùng công ty",
+    ],
   },
   {
-    start: "10:00",
+    start: "10:15",
+    end: "11:00",
+    content: ["Khai mạc"],
+  },
+  {
+    start: "11:00",
     end: "11:30",
-    content: ["Network cùng công ty", "Lập team"],
+    content: ["Lập team"],
   },
   {
     start: "11:30",
     end: "12:00",
-    content: ["Khai mạc"],
+    content: ["Các đội bàn ý tưởng"],
   },
   {
     start: "12:00",
-    end: "12:50",
-    content: ["Ăn trưa", "Hacking bắt đầu"],
+    end: "12h:50",
+    content: ["Ăn trưa"],
   },
   {
     start: "12:50",
-    end: "13:50",
+    end: "13:35",
     content: [
       "Workshop: Xây Website không cần code với Pingendo",
       "Workshop: Xây Website với HTML & CSS",
+    ]
+  },
+  {
+    start: "13:45",
+    end: "14:35",
+    content: [
       "Workshop: Xây Mobile App không cần code với Thunkable",
       "Workshop: Xây Mobile App với React Native",
     ]
   },
   {
-    start: "13:50",
-    end: "13:55",
-    content: ["Giải lao"],
+    start: "14:40",
+    end: "15:35",
+    content: [
+      "Workshop: Xây Chatbot với Natural Language Toolkit Platform", 
+      "Workshop: Giới thiệu về Data Analysis bằng ngôn ngữ R"
+    ]
   },
   {
-    start: "13:55",
-    end: "14:55",
-    content: ["Workshop: Xây Chatbot với Natural Language Toolkit Platform", "Workshop: Giới thiệu về Data Analysis"]
+    start: "15:30",
+    end: "15:50",
+    content: [
+      "Tea Break!",
+    ]
   },
   {
-    start: "14:55",
-    end: "15:00",
-    content: ["Giải lao"]
+    start: "15:50",
+    end: "16:50",
+    content: [
+      "Workshop: Nhận diện khuôn mặt với OpenCV", 
+      "Workshop: Recommender System - Hệ thống gợi ý"
+    ]
   },
   {
-    start: "15:00",
-    end: "16:00",
-    content: ["Workshop: Nhận diện khuôn mặt với OpenCV", "Workshop: Recommender System - Hệ thống gợi ý"]
+    start: "16:55",
+    end: "17:35",
+    content: ["Tech talk: Hệ thống đám mây & Ứng dụng cho Startups"]
   },
   {
-    start: "16:00",
-    end: "16:05",
-    content: ["Giải lao"]
+    start: "17:40",
+    end: "18:35",
+    content: [
+      "Techtalk: Technical Strategy for AI Engineers"
+    ]
   },
   {
-    start: "16:05",
-    end: "17:05",
-    content: ["Tech talk 1: Ethics in Artificial Intelligence & Unbiased Algorithms"]
-  },
-  {
-    start: "17:05",
-    end: "17:10",
-    content: ["Giải lao"]
-  },
-  {
-    start: "17:10",
-    end: "18:10",
-    content: ["Workshop: Internet of Things"]
-  },
-  {
-    start: "18:10",
-    end: "19:00",
+    start: "18:40",
+    end: "19:20",
     content: ["Ăn tối"]
   },
   {
-    start: "19:00",
-    end: "20:00",
-    content: ["Workshop: Cloud Computing"]
+    start: "19:30",
+    end: "20:30",
+    content: [
+      "Hot Take: Research Scientists vs Engineers",
+      "Sau đại học: Đi làm nghiên cứu hay đi làm kỹ sư?"
+    ]
   },
   {
-    start: "20:00",
-    end: "20:20",
-    content: ["Mini-games: Cup Stacking"]
+    start: "20:30",
+    end: "21:30",
+    content: ["Cloud Computing"]
   },
   {
-    start: "20:20",
-    end: "23:00",
-    content: ["Hacking tiếp tục"]
+    start: "21:30",
+    end: "22:00",
+    content: ["Snack!"]
   },
   {
-    time: "23:00",
+    start: "22:00",
+    end: "22:45",
     content: ["Đắp mặt nạ"]
   }
 ];
@@ -448,18 +463,24 @@ const HanoiAgendaSecondDayMap = [
   },
   {
     start: "08:30",
-    end: "09:30",
-    content: ["Tech talk 2: Open source & Fellowship Programs in Tech"]
+    end: "09:15",
+    content: [
+      "Câu chuyện chuyển ngành:",
+      "Học Marketing để đi làm Nghiên cứu Trí Tuệ Nhân tạo"
+    ]
   },
   {
-    start: "09:30",
-    end: "09:35",
+    start: "09:15",
+    end: "09:20",
     content: ["Giải lao"]
   },
   {
-    start: "09:35",
+    start: "09:20",
     end: "10:15",
-    content: ["Tech talk 3: Phát triển sự nghiệp trong lĩnh vực Tech"]
+    content: [
+      "Virtual Tech talk: Làm kỹ sư phần mềm ở Google cũng dễ :)",
+      "(From a bio nerds to Software Engineer at Google)"
+    ]
   },
   {
     start: "10:15",
@@ -483,21 +504,36 @@ const HanoiAgendaSecondDayMap = [
   },
   {
     start: "13:00",
-    end: "13:45",
-    content: ["Vòng 1: Mentor sàng lọc", "Hackers chuẩn bị vòng thuyết trình"]
+    end: "14:00",
+    content: ["Vòng 1: Triển lãm sản phẩm", "Mentors đánh giá các đội"]
   },
   {
-    start: "13:45",
+    start: "14:00",
+    end: "14:45",
+    content: [
+      "Hot Take: AI In Medicine",
+      "Trí tuệ nhân tạo trong Y học"
+    ]
+  },
+  {
+    start: "14:45",
+    end: "15:00",
+    content: [
+      "Tea Break"
+    ]
+  },
+  {
+    start: "15:00",
     end: "17:00",
-    content: ["Vòng Pitching: Các team thuyết trình"]
+    content: ["Vòng 2: Top 10 thuyết trình sản phẩm (5 phút thuyết trình và 3 phút Q&A mỗi đội)"]
   },
   {
     start: "17:00",
-    end: "17:45",
-    content: ["Panel: I Am Remarkable from Google", "Vòng 2: Đánh giá từ khách mời"]
+    end: "17:30",
+    content: ["Workshop: I am remarkable, from Google’s Women Techmakers Scholar", "Ban Giám Khảo đánh giá các đội"]
   },
   {
-    start: "17:45",
+    start: "17:35",
     end: "18:00",
     content: ["Công bố kết quả & Lễ bế mạc"]
   }
@@ -520,14 +556,13 @@ const HCMAgendaFirstDayMap = [
     content: ["Hacking bắt đầu", "Workshop: Hệ điều hành và máy ảo"]
   },
   {
-    start: "12:30",
-    end: "13:00",
+    time: "12:30",
     content: ["Ăn trưa"],
   },
   {
     start: "13:00",
     end: "15:00",
-    content: ["Workshop: HTML + CSS cơ bản và framework", "Workshop: Xây dựng app cơ bản với Flutter"]
+    content: ["Workshop: HTML + CSS cơ bản và framework"]
   },
   {
     start: "15:30",
@@ -535,19 +570,25 @@ const HCMAgendaFirstDayMap = [
     content: ["Workshop: ExpressJS – Xây dựng server với JavaScript"]
   },
   {
-    start: "18:00",
+    start: "17:30",
     end: "19:00",
     content: ["Trao đổi ý tưởng và nhận xét. Ăn tối"]
   },
   {
     start: "19:30",
-    end: "20:30",
-    content: ["Workshop: Tiếp cận và xây dựng model cơ bản với thư viện sklearn"]
+    end: "21:00",
+    content: [
+      "Workshop: Hello AWS - Python trên Cloud",
+      "Python Workshop: Lập trình GUI và truy xuất dữ liệu cùng SQlite",
+    ]
   },
   {
     start: "21:00",
     end: "22:30",
-    content: ["Workshop: Xây dựng chatbot cho ứng dụng của bạn", "Workshop: Tích hợp xử lí hình ảnh cho ứng dụng của bạn"]
+    content: [
+      "Workshop: Xây dựng chatbot cho ứng dụng của bạn", 
+      "Workshop: Tiếp cận và xây dựng model cơ bản với thư viện sklearn"
+    ]
   },
   {
     start: "22:30",
@@ -564,27 +605,26 @@ const HCMAgendaSecondDayMap = [
   {
     start: "06:30",
     end: "07:00",
-    content: ["Yoga cùng giáo viên khách mời (TBD)"]
+    content: ["Yoga cùng giáo viên khách mời BOUND YOGA"]
   },
   {
-    start: "07:00",
-    end: "07:30",
+    time: "07:00",
     content: ["Ăn sáng"]
   },
   {
     start: "07:30",
     end: "08:30",
-    content: ["Tech talk: Giới nữ và thời đại AI"]
+    content: ["Workshop: Web hosting và AWS"]
   },
   {
-    start: "08:45",
-    end: "09:45",
-    content: ["Workshop: Web hosting và AWS"]
+    start: "08:40",
+    end: "09:40",
+    content: ["Techtalk: Internet of Things"]
   },
   {
     start: "10:00",
     end: "11:00",
-    content: ["Workshop công ty khách mời"]
+    content: ["Techtalk: Kiến tạo giá trị - Nền tảng của Pitching"]
   },
   {
     time: "12:30",
@@ -592,22 +632,22 @@ const HCMAgendaSecondDayMap = [
   },
   {
     start: "13:00",
-    end: "14:00",
-    content: ["Workshop: Kĩ năng thuyết trình"]
-  },
-  {
-    start: "14:00",
     end: "15:00",
-    content: ["Triển lãm sản phẩm"]
-  },
-  {
-    start: "15:00",
-    end: "16:00",
-    content: ["Top 10 thuyết trình về sản phẩm"]
+    content: ["Techtalk: AI 101"]
   },
   {
     start: "16:00",
     end: "17:00",
+    content: ["Triển lãm sản phẩm"]
+  },
+  {
+    start: "17:00",
+    end: "18:00",
+    content: ["Top 5 thuyết trình về sản phẩm"]
+  },
+  {
+    start: "18:00",
+    end: "19:00",
     content: ["Công bố giải thưởng và bế mạc"]
   }
 ]
@@ -704,17 +744,6 @@ const GSHeaderIntro = styled.h3`
   line-height: 1.7;
 `;
 
-const PartnerBox = styled.div`
-  background-color: #000;
-	padding-top: 10rem;
-	padding-bottom: 10rem;
-`;
-
-const PartnerBoxHCM = styled.div`
-  background-color: #000;
-	padding-bottom: 10rem;
-`;
-
 const FAQsBox = styled.div`
   background-color: #000;
   padding-bottom: 5rem;
@@ -778,7 +807,7 @@ const FAQsMap = [
   },
   {
     question: "> Thời gian và địa điểm tổ chức SheCodes Hackathon 2020?",
-    ans: ["Sự kiện sẽ diễn ra trong hai ngày:", ["Hà Nội: 18, 19/7/2020", "Hồ Chí Minh: 25, 26/7/2020"], "Địa điểm: Sẽ được thông báo sau"]
+    ans: ["Sự kiện sẽ diễn ra trong hai ngày:", ["Hà Nội: 25, 26/7/2020", "Hồ Chí Minh: 18, 19/7/2020"], "Địa điểm: Sẽ được thông báo sau"]
   },
   {
     question: "> Nếu không ở Hà Nội hoặc Hồ Chí Minh thì có thể tham gia SheCodes Hackathon 2020 được không?",
@@ -977,7 +1006,39 @@ const criteria = [
     icon: "icon-basic-cloud"
   }
 ];
-const speakers = [
+const speakers_hn = [
+  {
+    name: "Mr. Minh Duong",
+    title: "CBO OSAM",
+    image: githubRawAsserts + "speaker/hn/minh_duong.jpg"
+  },
+  {
+    name: "Mr. Tuan Nguyen",
+    title: "Founder AI For Everyone - Research Scientist Vingroup BigData Institute",
+    image: githubRawAsserts + "speaker/hn/tuan_nguyen.jpg"
+  },
+  {
+    name: "Ms. Trang Tran",
+    title: "Software Engineer, Site Reliability Google",
+    image: githubRawAsserts + "speaker/hn/trang_tran.png",
+  },
+  {
+    name: "Ms. Nguyen Quynh Mai",
+    title: "AI Research Engineer",
+    image: githubRawAsserts + "speaker/hn/nguyen_quynh_mai.jpeg",
+  },
+  {
+    name: "Mr. Binh Nguyen",
+    title: "Google Developer Expert in Machine Learning - NLP Engineer at VinBigdata",
+    image: githubRawAsserts + "speaker/hn/binh_nguyen.png",
+  },
+  {
+    name: "Ms Quynh Le",
+    title: "VinAI Resident",
+    image: githubRawAsserts + "speaker/hn/quynh_le.jpg",
+  }
+];
+const speakers_hcm = [
   {
     name: "Madam Lien",
     title: "CEO LIAN, Investor Shark Tank Vietnam",
@@ -986,7 +1047,7 @@ const speakers = [
   {
     name: "Mr. Tran Vu Anh",
     title: "CTO Waves8",
-    image: "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/guest speaker/tran_vu_anh.jpg",
+    image: githubRawAsserts + "speaker/hcm/tran_vu_anh.jpg",
   },
   {
     name: "Mr. Ly Quang Huy",
@@ -1008,77 +1069,40 @@ const speakers = [
     title: "Teacher at Facebook Developer Circles Innovation Challenge",
     image: "https://vuhuycto.github.io/shecodesdemo/assets/nguye-thuy-an.jpg"
   },
-];
-const sponsors_hn = [
   {
-    name: "Nhà Tài Trợ Kim Cương",
-    images: [
-      "https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg", 
-      githubRawAsserts + "sponsors/OSAM.png"
-    ]
+    name: "Mr. Nguyen Xuan Hiep",
+    title: "Data Scientist - Logivan",
+    image: githubRawAsserts + "speaker/hcm/nguyen_xuan_hiep.png"
   },
   {
-    name: "Nhà Tài Trợ Vàng",
-    images: [
-      "https://vuhuycto.github.io/shecodesdemo/assets/globalcare-logo.jpg", 
-      "https://vuhuycto.github.io/shecodesdemo/assets/openm-logo.jpg"
-    ],
+    name: "Mr. Anjul S",
+    title: "Thạc sĩ Khoa học Máy tính và Kỹ thuật của Viện Khoa học Ấn Độ",
+    image: githubRawAsserts + "speaker/hcm/anju.jpg"
   },
   {
-    name: "Nhà Tài Trợ Bạc",
-    images: [
-      "https://vuhuycto.github.io/shecodesdemo/assets/sutunam-logo.jpg", 
-      "https://vuhuycto.github.io/shecodesdemo/assets/logo-ebiv-.jpg", 
-      "https://vuhuycto.github.io/shecodesdemo/assets/colorme-logo.jpg"
-    ]
+    name: "Mr. Vu Thai Bao",
+    title: "Trung Tâm Giám Sát An Toàn Thông Tin HPT",
+    image: githubRawAsserts + "speaker/hcm/vu_thai_bao.png"
   },
   {
-    name: "Đối tác",
-    images: [
-      "https://vuhuycto.github.io/shecodesdemo/assets/Shopee-logo.jpg", 
-      "https://vuhuycto.github.io/shecodesdemo/assets/cinnamon-ai-labs-logo.jpg",
-      "https://vuhuycto.github.io/shecodesdemo/assets/coworking-space-logo.jpg",
-      "https://vuhuycto.github.io/shecodesdemo/assets/logo-Summit-01-1024x292.jpg",
-    ]
-  }
-];
-
-const sponsors_hcm = [
-  {
-    name: "Đồng tổ chức",
-    images: [
-      githubRawAsserts + "/sponsors/hcm/vtc.png"
-    ]
+    name: "Mr. Dang Thanh Qui",
+    title: "Trưởng Bộ môn Lập trình - VTC Academy TP.HCM",
+    image: githubRawAsserts + "speaker/hcm/dang_thanh_qui.png",
   },
   {
-    name: "Nhà tài trợ kim cương",
-    images: [
-      githubRawAsserts + "/sponsors/hcm/lian.png"
-    ]
+    name: "Mr. Ho Nguyen Hoang Phuong",
+    title: "Giảng viên ngành Lập trình Game - VTC Academy TP.HCM",
+    image: githubRawAsserts + "speaker/hcm/ho_nguyen_hoang_phuong.png"
   },
   {
-    name: "Nhà tài trợ vàng",
-    images: [
-      githubRawAsserts + "/sponsors/hcm/topcv.png"
-    ]
+    name: "Mr. Vu Tuan Anh",
+    title: "Thạc sỹ Vũ Tuấn Anh - Chuyên Gia Khởi Nghiệp – Hướng Nghiệp – Nghề Nghiệp",
+    image: githubRawAsserts + "speaker/hcm/vu_tuan_anh.png"
   },
   {
-    name: "Đối tác chuyên môn",
-    images: [
-      githubRawAsserts + "/sponsors/hcm/tiki.png"
-    ]
-  },
-  {
-    name: "Bảo trợ truyền thông",
-    images: [
-      githubRawAsserts + "sponsors/hcm/ybox.png"
-    ]
-  },
-  {
-    name: "Đối  tác truyền thông",
-    images: [
-      githubRawAsserts + "sponsors/hcm/coc_sai_gon.jpg"
-    ]
+    name: "Mr. Pham Minh Duc",
+    title: "Giám đốc Marketing & Truyền thông – VTC Academy",
+    image: githubRawAsserts + "speaker/hcm/pham_minh_duc.png"
   }
 ];
 
@@ -1307,10 +1331,10 @@ const Hackathon = (props) => {
           lineHeight="1.7"
           width="90%"
         >
-          DANH SÁCH DIỄN GIẢ
+          DANH SÁCH DIỄN GIẢ HÀ NỘI
         </NormalText>
         <FlexBox maxWidth wrap="wrap" margin="8rem auto 0" smallMargin="6rem auto 0" addition="align-content: space-around;">
-          {speakers.map((value, index) => (
+          {speakers_hn.map((value, index) => (
             <Box
               width={`${100/3}%`}
               padding="2.5%"
@@ -1335,7 +1359,7 @@ const Hackathon = (props) => {
           ))}
         </FlexBox>
       </GSBox>
-      <PartnerBox>
+      <GSBox>
         <NormalText
           s="h2"
           display="block"
@@ -1348,109 +1372,35 @@ const Hackathon = (props) => {
           lineHeight="1.7"
           width="90%"
         >
-          ĐỐI TÁC HÀ NỘI
+          DANH SÁCH DIỄN GIẢ HỒ CHÍ MINH
         </NormalText>
-        {
-          sponsors_hn.map((value, index) => (
+        <FlexBox maxWidth wrap="wrap" margin="8rem auto 0" smallMargin="6rem auto 0" addition="align-content: space-around;">
+          {speakers_hcm.map((value, index) => (
             <Box
-              key={"sponsors_" + index}
-              margin="8rem auto 8rem auto"
-              smallMargin="6rem auto 6rem auto"
+              width={`${100/3}%`}
+              padding="2.5%"
+              smallWidth="85%"
+              smallMargin="0 auto"
+              key={"speaker_" + index}
             >
-              <NormalText
-                as="h3"
-                margin="0 0 1.5rem 0"
-                display="block"
-                textAlign="center"
-                fontSize="2.4rem"
-                lineHeight="1.7"
+              <Card
+                direction="column"
+                padding="2rem"
+                height="100%"
               >
-                {value.name}
-              </NormalText>
-              <FlexBox
-                maxWidth
-                margin="auto"
-                addition="justify-content: center;"
-              >
-                {value.images.map((image, i) => (
-                  <Box 
-                    width={`${100/(value.images.length + 2)}%`}
-                    padding="1%"
-                    key={"sponsor_" + i}
-                    smallWidth="50%"
-                    smallMargin="0 auto"
-                  >
-                    <Box 
-                      as="img"
-                      src={image}
-                      alt={image}
-                      addition="max-width: 100%;"
-                    />
-                  </Box>
-                ))}
-              </FlexBox>
+                <GSCardImageBox>
+                  <GSCardImage src={value.image} alt={value.name}/>
+                </GSCardImageBox>
+                <GSTextBox>
+                  <GSHeaderIntro>{value.name}</GSHeaderIntro>
+                <GSText>{value.title}</GSText>
+                </GSTextBox>
+              </Card>
             </Box>
-          ))
-        }
-      </PartnerBox>
-      <PartnerBoxHCM>
-        <NormalText
-          s="h2"
-          display="block"
-          margin="0 auto"
-          padding="0"
-          textAlign="center"
-          fontSize="4rem"
-          fontWeight="700"
-          letterSpacing="0.2rem"
-          lineHeight="1.7"
-          width="90%"
-        >
-          ĐỐI TÁC HỒ CHÍ MINH
-        </NormalText>
-        {
-          sponsors_hcm.map((value, index) => (
-            <Box
-              key={"sponsors_" + index}
-              margin="8rem auto 8rem auto"
-              smallMargin="6rem auto 6rem auto"
-            >
-              <NormalText
-                as="h3"
-                margin="0 0 1.5rem 0"
-                display="block"
-                textAlign="center"
-                fontSize="2.4rem"
-                lineHeight="1.7"
-              >
-                {value.name}
-              </NormalText>
-              <FlexBox
-                maxWidth
-                margin="auto"
-                addition="justify-content: center;"
-              >
-                {value.images.map((image, i) => (
-                  <Box 
-                    width={`${100/(value.images.length + index + 2)}%`}
-                    padding="1%"
-                    key={"sponsor_" + i}
-                    smallWidth="50%"
-                    smallMargin="0 auto"
-                  >
-                    <Box 
-                      as="img"
-                      src={image}
-                      alt={image}
-                      addition="max-width: 100%;"
-                    />
-                  </Box>
-                ))}
-              </FlexBox>
-            </Box>
-          ))
-        }
-      </PartnerBoxHCM>
+          ))}
+        </FlexBox>
+      </GSBox>
+      <SponsorsList />
       <article>
         <img src="https://vuhuycto.github.io/shecodesdemo/assets/B%C3%A0i%20bung.gif" alt="inspiration" style={{display: "block", width: "100%"}}/>
       </article>

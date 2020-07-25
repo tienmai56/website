@@ -20,17 +20,25 @@ const PartnerBoxHCM = styled.div`
 
 const sponsors_hn = [
   {
+    name: "Đơn vị đồng tổ chức",
+    images: [
+      githubRawAsserts + "sponsors/hn/bkhup.jpg",
+      githubRawAsserts + "sponsors/hn/women_techmarkers.png",
+    ]
+  },
+  {
     name: "Nhà Tài Trợ Kim Cương",
     images: [
       "https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg", 
-      githubRawAsserts + "sponsors/OSAM.png"
+      githubRawAsserts + "sponsors/OSAM.png",
     ]
   },
   {
     name: "Nhà Tài Trợ Vàng",
     images: [
       "https://vuhuycto.github.io/shecodesdemo/assets/globalcare-logo.jpg", 
-      "https://vuhuycto.github.io/shecodesdemo/assets/openm-logo.jpg"
+      "https://vuhuycto.github.io/shecodesdemo/assets/openm-logo.jpg",
+      githubRawAsserts + "sponsors/hn/ai4e.png"
     ],
   },
   {
@@ -44,10 +52,9 @@ const sponsors_hn = [
   {
     name: "Đối tác",
     images: [
-      "https://vuhuycto.github.io/shecodesdemo/assets/Shopee-logo.jpg", 
-      "https://vuhuycto.github.io/shecodesdemo/assets/cinnamon-ai-labs-logo.jpg",
-      "https://vuhuycto.github.io/shecodesdemo/assets/coworking-space-logo.jpg",
       "https://vuhuycto.github.io/shecodesdemo/assets/logo-Summit-01-1024x292.jpg",
+      githubRawAsserts + "sponsors/hn/wise.png",
+      githubRawAsserts + "sponsors/hn/rudicaf.png"
     ]
   }
 ];
@@ -140,15 +147,9 @@ const SponsorsThankYouText = styled.h1`
   box-sizing: border-box;
 `;
 
-const Sponsors = (props) => {
-  return(
-    <SponsorsBox>
-      <SponsorsThankyouBox>
-        <SponsorsThankYouTextBox>
-          <SponsorsThankYouText>Shecodes Việt Nam chân thành cảm ơn sâu sắc các nhà tài trợ, các doanh nghiệp, tổ chức đã, đang và sẽ đồng hành cùng chúng tôi thực hiện giấc mơ trao quyền, khuyến khích phái nữ dấn thân vào lĩnh vực công nghệ, gia tăng nguồn nhân lực chất lượng, nhiệt huyết, đóng góp tích cực vào công cuộc chuyển đổi số hoá tại Việt Nam.</SponsorsThankYouText>
-        </SponsorsThankYouTextBox>
-      </SponsorsThankyouBox>
-      <PartnerBox>
+const SponsorsList = () => (
+  <React.Fragment>
+    <PartnerBox>
         <NormalText
           s="h2"
           display="block"
@@ -187,7 +188,7 @@ const Sponsors = (props) => {
               >
                 {value.images.map((image, i) => (
                   <Box 
-                    width={`${100/(value.images.length + 2)}%`}
+                    width={`${100/(value.images.length + index)}%`}
                     padding="1%"
                     key={"sponsor_" + i}
                     smallWidth="50%"
@@ -245,7 +246,7 @@ const Sponsors = (props) => {
               >
                 {value.images.map((image, i) => (
                   <Box 
-                    width={`${100/(value.images.length + index + 2)}%`}
+                    width={`${100/(value.images.length + index + ( index === 0 ? 0 : 2) )}%`}
                     padding="1%"
                     key={"sponsor_" + i}
                     smallWidth="50%"
@@ -264,8 +265,21 @@ const Sponsors = (props) => {
           ))
         }
       </PartnerBoxHCM>
+  </React.Fragment>
+)
+
+const Sponsors = (props) => {
+  return(
+    <SponsorsBox>
+      <SponsorsThankyouBox>
+        <SponsorsThankYouTextBox>
+          <SponsorsThankYouText>Shecodes Việt Nam chân thành cảm ơn sâu sắc các nhà tài trợ, các doanh nghiệp, tổ chức đã, đang và sẽ đồng hành cùng chúng tôi thực hiện giấc mơ trao quyền, khuyến khích phái nữ dấn thân vào lĩnh vực công nghệ, gia tăng nguồn nhân lực chất lượng, nhiệt huyết, đóng góp tích cực vào công cuộc chuyển đổi số hoá tại Việt Nam.</SponsorsThankYouText>
+        </SponsorsThankYouTextBox>
+      </SponsorsThankyouBox>
+      <SponsorsList />
     </SponsorsBox>
   );
 }
 
 export default Sponsors;
+export { SponsorsList };
