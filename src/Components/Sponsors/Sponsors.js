@@ -29,30 +29,30 @@ const sponsors_hn = [
   {
     name: "Nhà Tài Trợ Kim Cương",
     images: [
-      "https://vuhuycto.github.io/shecodesdemo/assets/CSDS%20logo_final%20with%20slogan.jpg", 
+      githubRawAsserts + "sponsors/CSDS logo_final with slogan.jpg",
       githubRawAsserts + "sponsors/OSAM.png",
     ]
   },
   {
     name: "Nhà Tài Trợ Vàng",
     images: [
-      "https://vuhuycto.github.io/shecodesdemo/assets/globalcare-logo.jpg", 
-      "https://vuhuycto.github.io/shecodesdemo/assets/openm-logo.jpg",
+      githubRawAsserts + "sponsors/hn/globalcare-logo.jpg",
+      githubRawAsserts + "sponsors/hn/openm-logo.jpg",
       githubRawAsserts + "sponsors/hn/ai4e.png"
     ],
   },
   {
     name: "Nhà Tài Trợ Bạc",
     images: [
-      "https://vuhuycto.github.io/shecodesdemo/assets/sutunam-logo.jpg", 
-      "https://vuhuycto.github.io/shecodesdemo/assets/logo-ebiv-.jpg", 
-      "https://vuhuycto.github.io/shecodesdemo/assets/colorme-logo.jpg"
+      githubRawAsserts + "sponsors/hn/sutunam-logo.jpg",
+      githubRawAsserts + "sponsors/hn/logo-ebiv-.jpg",
+      githubRawAsserts + "sponsors/hn/colorme-logo.jpg"
     ]
   },
   {
     name: "Đối tác",
     images: [
-      "https://vuhuycto.github.io/shecodesdemo/assets/logo-Summit-01-1024x292.jpg",
+      githubRawAsserts + "sponsors/hn/logo-Summit-01-1024x292.jpg",
       githubRawAsserts + "sponsors/hn/wise.png",
       githubRawAsserts + "sponsors/hn/rudicaf.png"
     ]
@@ -150,126 +150,126 @@ const SponsorsThankYouText = styled.h1`
 const SponsorsList = () => (
   <React.Fragment>
     <PartnerBox>
-        <NormalText
-          s="h2"
-          display="block"
-          margin="0 auto"
-          padding="0"
-          textAlign="center"
-          fontSize="4rem"
-          fontWeight="700"
-          letterSpacing="0.2rem"
-          lineHeight="1.7"
-          width="90%"
-        >
-          ĐỐI TÁC HÀ NỘI
+      <NormalText
+        s="h2"
+        display="block"
+        margin="0 auto"
+        padding="0"
+        textAlign="center"
+        fontSize="4rem"
+        fontWeight="700"
+        letterSpacing="0.2rem"
+        lineHeight="1.7"
+        width="90%"
+      >
+        ĐỐI TÁC HÀ NỘI
         </NormalText>
-        {
-          sponsors_hn.map((value, index) => (
-            <Box
-              key={"sponsors_" + index}
-              margin="8rem auto 8rem auto"
-              smallMargin="6rem auto 6rem auto"
+      {
+        sponsors_hn.map((value, index) => (
+          <Box
+            key={"sponsors_" + index}
+            margin="8rem auto 8rem auto"
+            smallMargin="6rem auto 6rem auto"
+          >
+            <NormalText
+              as="h3"
+              margin="0 0 1.5rem 0"
+              display="block"
+              textAlign="center"
+              fontSize="2.4rem"
+              lineHeight="1.7"
             >
-              <NormalText
-                as="h3"
-                margin="0 0 1.5rem 0"
-                display="block"
-                textAlign="center"
-                fontSize="2.4rem"
-                lineHeight="1.7"
-              >
-                {value.name}
-              </NormalText>
-              <FlexBox
-                maxWidth
-                margin="auto"
-                addition="justify-content: center;"
-              >
-                {value.images.map((image, i) => (
-                  <Box 
-                    width={`${100/(value.images.length + index)}%`}
-                    padding="1%"
-                    key={"sponsor_" + i}
-                    smallWidth="50%"
-                    smallMargin="0 auto"
-                  >
-                    <Box 
-                      as="img"
-                      src={image}
-                      alt={image}
-                      addition="max-width: 100%;"
-                    />
-                  </Box>
-                ))}
-              </FlexBox>
-            </Box>
-          ))
-        }
-      </PartnerBox>
-      <PartnerBoxHCM>
-        <NormalText
-          s="h2"
-          display="block"
-          margin="0 auto"
-          padding="0"
-          textAlign="center"
-          fontSize="4rem"
-          fontWeight="700"
-          letterSpacing="0.2rem"
-          lineHeight="1.7"
-          width="90%"
-        >
-          ĐỐI TÁC HỒ CHÍ MINH
+              {value.name}
+            </NormalText>
+            <FlexBox
+              maxWidth
+              margin="auto"
+              addition="justify-content: center;"
+            >
+              {value.images.map((image, i) => (
+                <Box
+                  width={`${100 / (value.images.length + index)}%`}
+                  padding="1%"
+                  key={"sponsor_" + i}
+                  smallWidth="50%"
+                  smallMargin="0 auto"
+                >
+                  <Box
+                    as="img"
+                    src={image}
+                    alt={image}
+                    addition="max-width: 100%;"
+                  />
+                </Box>
+              ))}
+            </FlexBox>
+          </Box>
+        ))
+      }
+    </PartnerBox>
+    <PartnerBoxHCM>
+      <NormalText
+        s="h2"
+        display="block"
+        margin="0 auto"
+        padding="0"
+        textAlign="center"
+        fontSize="4rem"
+        fontWeight="700"
+        letterSpacing="0.2rem"
+        lineHeight="1.7"
+        width="90%"
+      >
+        ĐỐI TÁC HỒ CHÍ MINH
         </NormalText>
-        {
-          sponsors_hcm.map((value, index) => (
-            <Box
-              key={"sponsors_" + index}
-              margin="8rem auto 8rem auto"
-              smallMargin="6rem auto 6rem auto"
+      {
+        sponsors_hcm.map((value, index) => (
+          <Box
+            key={"sponsors_" + index}
+            margin="8rem auto 8rem auto"
+            smallMargin="6rem auto 6rem auto"
+          >
+            <NormalText
+              as="h3"
+              margin="0 0 1.5rem 0"
+              display="block"
+              textAlign="center"
+              fontSize="2.4rem"
+              lineHeight="1.7"
             >
-              <NormalText
-                as="h3"
-                margin="0 0 1.5rem 0"
-                display="block"
-                textAlign="center"
-                fontSize="2.4rem"
-                lineHeight="1.7"
-              >
-                {value.name}
-              </NormalText>
-              <FlexBox
-                maxWidth
-                margin="auto"
-                addition="justify-content: center;"
-              >
-                {value.images.map((image, i) => (
-                  <Box 
-                    width={`${100/(value.images.length + index + ( index === 0 ? 0 : 2) )}%`}
-                    padding="1%"
-                    key={"sponsor_" + i}
-                    smallWidth="50%"
-                    smallMargin="0 auto"
-                  >
-                    <Box 
-                      as="img"
-                      src={image}
-                      alt={image}
-                      addition="max-width: 100%;"
-                    />
-                  </Box>
-                ))}
-              </FlexBox>
-            </Box>
-          ))
-        }
-      </PartnerBoxHCM>
+              {value.name}
+            </NormalText>
+            <FlexBox
+              maxWidth
+              margin="auto"
+              addition="justify-content: center;"
+            >
+              {value.images.map((image, i) => (
+                <Box
+                  width={`${100 / (value.images.length + index + (index === 0 ? 0 : 2))}%`}
+                  padding="1%"
+                  key={"sponsor_" + i}
+                  smallWidth="50%"
+                  smallMargin="0 auto"
+                >
+                  <Box
+                    as="img"
+                    src={image}
+                    alt={image}
+                    addition="max-width: 100%;"
+                  />
+                </Box>
+              ))}
+            </FlexBox>
+          </Box>
+        ))
+      }
+    </PartnerBoxHCM>
   </React.Fragment>
 )
 
 const Sponsors = (props) => {
-  return(
+  return (
     <SponsorsBox>
       <SponsorsThankyouBox>
         <SponsorsThankYouTextBox>
