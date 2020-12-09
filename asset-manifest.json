@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/shecodes-website-react/static/css/main.c16a2eb9.chunk.css",
-    "main.js": "/shecodes-website-react/static/js/main.0b609a1e.chunk.js",
-    "main.js.map": "/shecodes-website-react/static/js/main.0b609a1e.chunk.js.map",
-    "runtime-main.js": "/shecodes-website-react/static/js/runtime-main.3623f4f5.js",
-    "runtime-main.js.map": "/shecodes-website-react/static/js/runtime-main.3623f4f5.js.map",
-    "static/js/2.0d5f2fb0.chunk.js": "/shecodes-website-react/static/js/2.0d5f2fb0.chunk.js",
-    "static/js/2.0d5f2fb0.chunk.js.map": "/shecodes-website-react/static/js/2.0d5f2fb0.chunk.js.map",
-    "index.html": "/shecodes-website-react/index.html",
-    "precache-manifest.899130c90f03a02cd392443626097944.js": "/shecodes-website-react/precache-manifest.899130c90f03a02cd392443626097944.js",
-    "service-worker.js": "/shecodes-website-react/service-worker.js",
-    "static/css/main.c16a2eb9.chunk.css.map": "/shecodes-website-react/static/css/main.c16a2eb9.chunk.css.map",
-    "static/js/2.0d5f2fb0.chunk.js.LICENSE.txt": "/shecodes-website-react/static/js/2.0d5f2fb0.chunk.js.LICENSE.txt",
-    "static/media/icon-font.css": "/shecodes-website-react/static/media/linea-basic-10.e6763f00.ttf"
+    "main.css": "/shecode-website-react/static/css/main.904bbd33.chunk.css",
+    "main.js": "/shecode-website-react/static/js/main.b9eeb415.chunk.js",
+    "main.js.map": "/shecode-website-react/static/js/main.b9eeb415.chunk.js.map",
+    "runtime-main.js": "/shecode-website-react/static/js/runtime-main.8e5b0923.js",
+    "runtime-main.js.map": "/shecode-website-react/static/js/runtime-main.8e5b0923.js.map",
+    "static/js/2.4a01bd8c.chunk.js": "/shecode-website-react/static/js/2.4a01bd8c.chunk.js",
+    "static/js/2.4a01bd8c.chunk.js.map": "/shecode-website-react/static/js/2.4a01bd8c.chunk.js.map",
+    "index.html": "/shecode-website-react/index.html",
+    "precache-manifest.5393770d27c1df7373abee5bcf8ae8de.js": "/shecode-website-react/precache-manifest.5393770d27c1df7373abee5bcf8ae8de.js",
+    "service-worker.js": "/shecode-website-react/service-worker.js",
+    "static/css/main.904bbd33.chunk.css.map": "/shecode-website-react/static/css/main.904bbd33.chunk.css.map",
+    "static/js/2.4a01bd8c.chunk.js.LICENSE.txt": "/shecode-website-react/static/js/2.4a01bd8c.chunk.js.LICENSE.txt",
+    "static/media/icon-font.css": "/shecode-website-react/static/media/linea-basic-10.e6763f00.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.3623f4f5.js",
-    "static/js/2.0d5f2fb0.chunk.js",
-    "static/css/main.c16a2eb9.chunk.css",
-    "static/js/main.0b609a1e.chunk.js"
+    "static/js/runtime-main.8e5b0923.js",
+    "static/js/2.4a01bd8c.chunk.js",
+    "static/css/main.904bbd33.chunk.css",
+    "static/js/main.b9eeb415.chunk.js"
   ]
 }
