@@ -1,4 +1,5 @@
 {
+  "homepage": "http://shecodesvietnam.github.io/shecodes-website-react",
   "name": "shecodes-website",
   "version": "0.1.0",
   "private": true,
@@ -23,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "aws s3 rm s3://shecodesvietnam.tech --recursive; aws s3 cp ./build/ s3://shecodesvietnam.tech --recursive"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
