@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7c953a90c1cce7205b9739d8400d428f",
+    "revision": "6c1e271d6f410c0b970a917cd53778f8",
     "url": "/shecodes-website-react/index.html"
   },
   {
-    "revision": "343c65b61a330d676746",
+    "revision": "922ddd870ecb02da1311",
     "url": "/shecodes-website-react/static/css/main.c16a2eb9.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shecodes-website-react/static/js/2.0d5f2fb0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "343c65b61a330d676746",
-    "url": "/shecodes-website-react/static/js/main.7ab01d44.chunk.js"
+    "revision": "922ddd870ecb02da1311",
+    "url": "/shecodes-website-react/static/js/main.0b609a1e.chunk.js"
   },
   {
     "revision": "c87284240c1623b38daf",
