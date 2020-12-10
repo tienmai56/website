@@ -119,8 +119,9 @@ const quotes = [
     image:
       "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/staffs/HN/PM_Nguyen_Huyen_My.jpg",
     quote:
-      "Nhiều người hỏi tại sao một cô gái như mình lại học Công nghệ?  Rất dễ hiểu, vì mình muốn là người giải quyết bài toán, xây dựng sản phẩm và phát triển nó. Đó là cuộc sống của những người học công nghệ và mình muốn trở thành một trong số đó. Còn bạn thì sao?",
-    footer: "Nguyễn Huyền My (Head of Hackathon) - Hà Nội",
+      "Trong quá trình phát triển SheCodes Việt Nam, có vài câu hỏi đặt ra rằng “Tại sao SheCodes, không phải HeCodes? Các bạn có đang tự phân biệt đối xử và đánh rơi cơ hội của các giới khác?” Tại SheCodes, không có bất kỳ nỗ lực nào được dành ra nhằm tạo sự thiên vị cho một giới nhất định, 50% mentors của chúng tôi là nam giới. Nỗ lực của SheCodes Việt Nam sẽ dành cho mục tiêu tôn trọng và tạo điều kiện để mỗi người tự do làm điều mình thích, phù hợp với khả năng và bản năng từng người dù họ thuộc giới nào trong lĩnh vực Công nghệ thông tin. Thấu hiểu được những khó khăn và muôn vàn trở ngại, bất kể bạn là nam hay nữ, thành thị hay nông thôn, đến với SheCodes, chúng tôi sẽ cùng bạn chắp cánh ước mơ, khẳng định bản thân và thực hiện sứ mệnh của mình." 
+    ,
+    footer: "Nguyễn Huyền My (Co-Founder of SheCodes Vietnam) - Hà Nội",
   },
   {
     image:
