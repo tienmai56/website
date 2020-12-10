@@ -194,8 +194,8 @@ const staffsMap = {
   ],
   "Program Manager": [
     {
-      name: "Trần Tuệ Nhi",
-      image: "HN/PM_Tran_Tue_Nhi.jpg",
+      name: "Nguyễn Huyền My",
+      image: "HN/PM_Nguyen_Huyen_My.jpg",
       content: "Head of Hackathon - Hà Nội",
     },
     {

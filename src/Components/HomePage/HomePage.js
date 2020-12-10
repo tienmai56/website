@@ -117,10 +117,10 @@ const quotes = [
   },
   {
     image:
-      "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/staffs/HN/PM_Tran_Tue_Nhi.jpg",
+      "https://raw.githubusercontent.com/shecodesvietnam/asserts/master/2020/staffs/HN/PM_Nguyen_Huyen_My.jpg",
     quote:
       "Nhiều người hỏi tại sao một cô gái như mình lại học Công nghệ?  Rất dễ hiểu, vì mình muốn là người giải quyết bài toán, xây dựng sản phẩm và phát triển nó. Đó là cuộc sống của những người học công nghệ và mình muốn trở thành một trong số đó. Còn bạn thì sao?",
-    footer: "Trần Tuệ Nhi (Head of Hackathon) - Hà Nội",
+    footer: "Nguyễn Huyền My (Head of Hackathon) - Hà Nội",
   },
   {
     image:
@@ -132,11 +132,11 @@ const quotes = [
 ];
 const statistics = [
   {
-    number: "20+",
+    number: "30+",
     description: "Sự kiện",
   },
   {
-    number: "2000+",
+    number: "3000+",
     description: "Người tham gia sự kiện",
   },
   {
@@ -144,7 +144,7 @@ const statistics = [
     description: "Diễn giả và các đối tác công ty công nghệ hàng đầu",
   },
   {
-    number: "6000+",
+    number: "10000+",
     description:
       "Người theo dõi các hoạt động, chương trình của Shecodes Việt Nam",
   },
@@ -240,14 +240,14 @@ const HomePage = (props) => {
             {time}
           </NormalText>
         </Box>
-        <RegistrationBox>
+        {/* <RegistrationBox>
           <RegistrationButton
             href="https://docs.google.com/forms/d/e/1FAIpQLSfSLJ8l2dbgT1aM_IgFe-ja3DWZG0KKSOBRlWQslaMNkQKmAA/viewform"
             target="_blank"
           >
             Đăng ký tham gia
           </RegistrationButton>
-        </RegistrationBox>
+        </RegistrationBox> */}
       </Box>
       <Box
         as="article"
